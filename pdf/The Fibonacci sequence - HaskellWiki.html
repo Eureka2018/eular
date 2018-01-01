@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0047)https://wiki.haskell.org/The_Fibonacci_sequence -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="generator" content="MediaWiki 1.19.14+dfsg-1">
+<link rel="shortcut icon" href="https://wiki.haskell.org/wikistatic/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.haskell.org/opensearch_desc.php" title="HaskellWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.haskell.org/api.php?action=rsd">
+<link rel="copyright" href="https://wiki.haskell.org/HaskellWiki:Copyrights">
+<link rel="alternate" type="application/atom+xml" title="HaskellWiki Atom feed" href="https://wiki.haskell.org/index.php?title=Special:RecentChanges&amp;feed=atom">		<title>The Fibonacci sequence - HaskellWiki</title>
+		<style type="text/css" media="screen, projection">/*<![CDATA[*/
+			@import "/wikistatic/skins//common/shared.css?303";
+			@import "/wikistatic/skins//hawiki/main.css?303";
+		/*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="./The Fibonacci sequence - HaskellWiki_files/commonPrint.css">
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/wikistatic/skins//hawiki/IE50Fixes.css?303";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/wikistatic/skins//hawiki/IE55Fixes.css?303";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/wikistatic/skins//hawiki/IE60Fixes.css?303";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/wikistatic/skins//hawiki/IE70Fixes.css?303";</style><![endif]-->
+		<!--[if lte IE 7]><script type="text/javascript" src="/wikistatic/skins//hawiki/IEFixes.js?303"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+                                                <script type="text/javascript" async="" src="./The Fibonacci sequence - HaskellWiki_files/ga.js.下载"></script><script type="text/javascript">
+                        var isMSIE55 = (window.showModalDialog && window.clipboardData && window.createPopup); /*alert("test: " + isMSIE55);*/</script>
+
+		<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"The_Fibonacci_sequence","wgTitle":"The Fibonacci sequence","wgCurRevisionId":61269,"wgArticleId":2500,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Code"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgRelevantPageName":"The_Fibonacci_sequence","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script>
+		<script type="text/javascript" src="./The Fibonacci sequence - HaskellWiki_files/wikibits.js.下载"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+<script src="./The Fibonacci sequence - HaskellWiki_files/load.php"></script><script src="./The Fibonacci sequence - HaskellWiki_files/load(1).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"The_Fibonacci_sequence","wgTitle":"The Fibonacci sequence","wgCurRevisionId":61269,"wgArticleId":2500,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Code"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgRelevantPageName":"The_Fibonacci_sequence","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":1,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"hawiki","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function($){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+
+/* cache key: wikidb_haskell:resourceloader:filter:minify-js:7:befcdb5e3b24ff89f900613de9ed4ea3 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="./The Fibonacci sequence - HaskellWiki_files/load(2).php"></script><style type="text/css" media="all">.js-messagebox{margin:1em 5%;padding:0.5em 2.5%;border:1px solid #ccc;background-color:#fcfcfc;font-size:0.8em}.js-messagebox .js-messagebox-group{margin:1px;padding:0.5em 2.5%;border-bottom:1px solid #ddd}.js-messagebox .js-messagebox-group:last-child{border-bottom:thin none transparent}
+
+/* cache key: wikidb_haskell:resourceloader:filter:minify-css:7:8b08bdc91c52a9ffba396dccfb5b473c */
+
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+
+/* cache key: wikidb_haskell:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */</style><meta name="ResourceLoaderDynamicStyles"><style type="text/css">/*<![CDATA[*/
+.source-haskell {line-height: normal;}
+.source-haskell li, .source-haskell pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for haskell
+ * CSS class: source-haskell, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.haskell.source-haskell .de1, .haskell.source-haskell .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.haskell.source-haskell  {font-family:monospace;}
+.haskell.source-haskell .imp {font-weight: bold; color: red;}
+.haskell.source-haskell li, .haskell.source-haskell .li1 {font-weight: normal; vertical-align:top;}
+.haskell.source-haskell .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.haskell.source-haskell .li2 {font-weight: bold; vertical-align:top;}
+.haskell.source-haskell .kw1 {color: #06c; font-weight: bold;}
+.haskell.source-haskell .kw2 {color: #06c; font-weight: bold;}
+.haskell.source-haskell .kw3 {font-weight: bold;}
+.haskell.source-haskell .kw4 {color: #cccc00; font-weight: bold;}
+.haskell.source-haskell .kw5 {color: maroon; font-weight: bold;}
+.haskell.source-haskell .co1 {color: #5d478b; font-style: italic;}
+.haskell.source-haskell .co2 {color: #339933; font-weight: bold;}
+.haskell.source-haskell .co3 {color: #5d478b; font-style: italic;}
+.haskell.source-haskell .coMULTI {color: #5d478b; font-style: italic;}
+.haskell.source-haskell .es0 {background-color: #3cb371; font-weight: bold;}
+.haskell.source-haskell .br0 {color: green;}
+.haskell.source-haskell .sy0 {color: #339933; font-weight: bold;}
+.haskell.source-haskell .st0 {color: #3cb371;}
+.haskell.source-haskell .nu0 {color: red;}
+.haskell.source-haskell .me1 {color: #060;}
+.haskell.source-haskell .ln-xtra, .haskell.source-haskell li.ln-xtra, .haskell.source-haskell div.ln-xtra {background-color: #ffc;}
+.haskell.source-haskell span.xtra { display:block; }
+
+/*]]>*/
+</style>	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-The_Fibonacci_sequence skin-hawiki">
+   <div id="topbar" class="noprint">
+	<div class="portlet noprint" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul><li><a class="homebutton" href="https://wiki.haskell.org/Haskell">Home</a></li>
+				<li id="pt-login"><a href="https://wiki.haskell.org/index.php?title=Special:UserLogin&amp;returnto=The+Fibonacci+sequence">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+        	  <div id="p-search">
+	    <div id="searchBody" class="pBody">
+	       <form action="https://wiki.haskell.org/index.php" id="searchform"><div>
+	          <input type="hidden" name="title" value="Special:Search">
+	          <input id="searchInput" name="search" type="text" value="">
+				<input type="submit" name="go" class="searchButton" id="searchGoButton" value="Go">&nbsp;
+				<input type="submit" name="fulltext" class="searchButton" id="mw-searchButton" value="Search">
+
+	         </div></form>
+	    </div>
+	  </div>
+   </div>
+	<div id="globalWrapper">
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/wikistatic/haskellwiki_logo.png);" href="https://wiki.haskell.org/Haskell"></a>
+	</div>
+	<div id="column-content">
+        <div id="notice-area" class="noprint">
+        <!-- ?php $this->data['sitenotice'] = 'This is a test instance.  Do not edit, your changes will be lost.'; ? -->
+			        </div>
+        <div id="content-wrapper">
+	<div id="p-cactions" class="portlet noprint">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="https://wiki.haskell.org/The_Fibonacci_sequence">Page</a></li>
+				 <li id="ca-talk"><a href="https://wiki.haskell.org/Talk:The_Fibonacci_sequence">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="https://wiki.haskell.org/index.php?title=The_Fibonacci_sequence&amp;action=edit">View source</a></li>
+				 <li id="ca-history"><a href="https://wiki.haskell.org/index.php?title=The_Fibonacci_sequence&amp;action=history">History</a></li>			</ul>
+		</div>
+	</div>
+                        <div id="content"><div id="mw-js-message" class="js-messagebox" style="display: none;"></div>
+		<a name="top" id="top"></a>
+                        <h1 id="firstHeading" class="firstHeading">The Fibonacci sequence</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From HaskellWiki</h3>
+			<div id="contentSub"></div>
+			<div id="jump-to-nav">Jump to: <a href="https://wiki.haskell.org/The_Fibonacci_sequence#column-one">navigation</a>, <a href="https://wiki.haskell.org/The_Fibonacci_sequence#searchInput">search</a></div>			<!-- start content -->
+			<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Implementing the <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci sequence</a> is considered the "Hello, world!" of Haskell programming. This page collects Haskell implementations of the sequence.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="https://wiki.haskell.org/The_Fibonacci_sequence#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition"><span class="tocnumber">1</span> <span class="toctext">Naive definition</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Linear_operation_implementations"><span class="tocnumber">2</span> <span class="toctext">Linear operation implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#With_state"><span class="tocnumber">2.1</span> <span class="toctext">With state</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Tail_recursive"><span class="tocnumber">2.1.1</span> <span class="toctext">Tail recursive</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Monadic"><span class="tocnumber">2.1.2</span> <span class="toctext">Monadic</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Using_the_infinite_list_of_Fibonacci_numbers"><span class="tocnumber">2.2</span> <span class="toctext">Using the infinite list of Fibonacci numbers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Canonical_zipWith_implementation"><span class="tocnumber">2.2.1</span> <span class="toctext">Canonical zipWith implementation</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#With_direct_self-reference"><span class="tocnumber">2.2.2</span> <span class="toctext">With direct self-reference</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#With_scanl"><span class="tocnumber">2.2.3</span> <span class="toctext">With scanl</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#With_unfoldr"><span class="tocnumber">2.2.4</span> <span class="toctext">With unfoldr</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#With_iterate"><span class="tocnumber">2.2.5</span> <span class="toctext">With iterate</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#A_version_using_some_identities"><span class="tocnumber">2.3</span> <span class="toctext">A version using some identities</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Logarithmic_operation_implementations"><span class="tocnumber">3</span> <span class="toctext">Logarithmic operation implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Using_2x2_matrices"><span class="tocnumber">3.1</span> <span class="toctext">Using 2x2 matrices</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Another_fast_fib"><span class="tocnumber">3.2</span> <span class="toctext">Another fast fib</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Fastest_Fib_in_the_West"><span class="tocnumber">3.3</span> <span class="toctext">Fastest Fib in the West</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Constant-time_implementations"><span class="tocnumber">4</span> <span class="toctext">Constant-time implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Using_Binet.27s_formula"><span class="tocnumber">4.1</span> <span class="toctext">Using Binet's formula</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Generalization_of_Fibonacci_numbers"><span class="tocnumber">5</span> <span class="toctext">Generalization of Fibonacci numbers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#Fibonacci_n-Step_Numbers"><span class="tocnumber">5.1</span> <span class="toctext">Fibonacci <i>n</i>-Step Numbers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="https://wiki.haskell.org/The_Fibonacci_sequence#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Naive_definition">1  Naive definition </span></h2>
+<p>The standard definition can be expressed directly:
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fib <span class="nu0">0</span> <span class="sy0">=</span> <span class="nu0">0</span>
+fib <span class="nu0">1</span> <span class="sy0">=</span> <span class="nu0">1</span>
+fib n <span class="sy0">=</span> fib <span class="br0">(</span>n<span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="sy0">+</span> fib <span class="br0">(</span>n<span class="sy0">-</span><span class="nu0">2</span><span class="br0">)</span></pre></div></div>
+<p>This implementation requires <i>O(fib n)</i> additions.
+</p>
+<h2> <span class="mw-headline" id="Linear_operation_implementations">2  Linear operation implementations </span></h2>
+<h3> <span class="mw-headline" id="With_state">2.1  With state </span></h3>
+<p>Haskell translation of python algo
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1"><span class="coMULTI">{- def fib(n):
+      a, b = 0, 1
+      for _ in xrange(n):
+          a, b = b, a + b
+      return a  -}</span></pre></div></div>
+<h4> <span class="mw-headline" id="Tail_recursive">2.1.1  Tail recursive </span></h4>
+<p>Using accumulator argument for state passing
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1"><span class="coMULTI">{-# LANGUAGE BangPatterns #-}</span>
+fib n <span class="sy0">=</span> go n <span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span>
+  <span class="kw1">where</span>
+    go <span class="sy0">!</span>n <span class="br0">(</span><span class="sy0">!</span>a, <span class="sy0">!</span>b<span class="br0">)</span> <span class="sy0">|</span> n<span class="sy0">==</span><span class="nu0">0</span>      <span class="sy0">=</span> a
+                   <span class="sy0">|</span> <span class="kw3">otherwise</span> <span class="sy0">=</span> go <span class="br0">(</span>n<span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="br0">(</span>b, a<span class="sy0">+</span>b<span class="br0">)</span></pre></div></div>
+<h4> <span class="mw-headline" id="Monadic">2.1.2  Monadic </span></h4>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1"><span class="kw1">import</span> Control.<span class="kw5">Monad</span>.State
+fib n <span class="sy0">=</span> <span class="kw3">flip</span> evalState <span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> <span class="sy0">$</span> <span class="kw1">do</span>
+  forM <span class="br0">[</span><span class="nu0">0</span>..<span class="br0">(</span>n<span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span><span class="br0">]</span> <span class="sy0">$</span> <span class="sy0">\</span>_ <span class="sy0">-&gt;</span> <span class="kw1">do</span>
+    <span class="br0">(</span>a,b<span class="br0">)</span> <span class="sy0">&lt;-</span> get
+    put <span class="br0">(</span>b,a<span class="sy0">+</span>b<span class="br0">)</span>
+  <span class="br0">(</span>a,b<span class="br0">)</span> <span class="sy0">&lt;-</span> get
+  <span class="kw3">return</span> a</pre></div></div>
+<h3> <span class="mw-headline" id="Using_the_infinite_list_of_Fibonacci_numbers">2.2  Using the infinite list of Fibonacci numbers </span></h3>
+<p>One can compute the first <i>n</i> Fibonacci numbers with <i>O(n)</i> additions.
+</p>
+If <div class="inline-code"><div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell">fibs</div></div></div> is the infinite list of Fibonacci numbers, one can define
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fib n <span class="sy0">=</span> fibs<span class="sy0">!!</span>n</pre></div></div>
+<h4> <span class="mw-headline" id="Canonical_zipWith_implementation">2.2.1  Canonical zipWith implementation </span></h4>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fibs <span class="sy0">=</span> <span class="nu0">0</span> <span class="sy0">:</span> <span class="nu0">1</span> <span class="sy0">:</span> <span class="kw3">zipWith</span> <span class="br0">(</span><span class="sy0">+</span><span class="br0">)</span> fibs <span class="br0">(</span><span class="kw3">tail</span> fibs<span class="br0">)</span></pre></div></div>
+<h4> <span class="mw-headline" id="With_direct_self-reference">2.2.2  With direct self-reference </span></h4>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fibs <span class="sy0">=</span> <span class="nu0">0</span> <span class="sy0">:</span> <span class="nu0">1</span> <span class="sy0">:</span> next fibs
+  <span class="kw1">where</span>
+    next <span class="br0">(</span>a <span class="sy0">:</span> t<span class="sy0">@</span><span class="br0">(</span>b<span class="sy0">:</span>_<span class="br0">)</span><span class="br0">)</span> <span class="sy0">=</span> <span class="br0">(</span>a<span class="sy0">+</span>b<span class="br0">)</span> <span class="sy0">:</span> next t</pre></div></div>
+<h4> <span class="mw-headline" id="With_scanl">2.2.3  With scanl </span></h4>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fibs <span class="sy0">=</span> <span class="kw3">scanl</span> <span class="br0">(</span><span class="sy0">+</span><span class="br0">)</span> <span class="nu0">0</span> <span class="br0">(</span><span class="nu0">1</span><span class="sy0">:</span>fibs<span class="br0">)</span>
+fibs <span class="sy0">=</span> <span class="nu0">0</span> <span class="sy0">:</span> <span class="kw3">scanl</span> <span class="br0">(</span><span class="sy0">+</span><span class="br0">)</span> <span class="nu0">1</span> fibs</pre></div></div>
+The recursion can be replaced with <div class="inline-code"><div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell">fix</div></div></div>:
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fibs <span class="sy0">=</span> fix <span class="br0">(</span><span class="kw3">scanl</span> <span class="br0">(</span><span class="sy0">+</span><span class="br0">)</span> <span class="nu0">0</span> . <span class="br0">(</span><span class="nu0">1</span><span class="sy0">:</span><span class="br0">)</span><span class="br0">)</span>
+fibs <span class="sy0">=</span> fix <span class="br0">(</span><span class="br0">(</span><span class="nu0">0</span><span class="sy0">:</span><span class="br0">)</span> . <span class="kw3">scanl</span> <span class="br0">(</span><span class="sy0">+</span><span class="br0">)</span> <span class="nu0">1</span><span class="br0">)</span></pre></div></div>
+<p>The <code>fix</code> used here has to be implemented through sharing, <code>fix f = xs where xs = f xs</code>, not code replication, <code>fix f = f (fix f)</code>, to avoid quadratic behaviour.
+</p>
+<h4> <span class="mw-headline" id="With_unfoldr">2.2.4  With unfoldr </span></h4>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fibs <span class="sy0">=</span> unfoldr <span class="br0">(</span><span class="sy0">\</span><span class="br0">(</span>a,b<span class="br0">)</span> <span class="sy0">-&gt;</span> Just <span class="br0">(</span>a,<span class="br0">(</span>b,a<span class="sy0">+</span>b<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span></pre></div></div>
+<h4> <span class="mw-headline" id="With_iterate">2.2.5  With iterate </span></h4>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fibs <span class="sy0">=</span> <span class="kw3">map</span> <span class="kw3">fst</span> <span class="sy0">$</span> <span class="kw3">iterate</span> <span class="br0">(</span><span class="sy0">\</span><span class="br0">(</span>a,b<span class="br0">)</span> <span class="sy0">-&gt;</span> <span class="br0">(</span>b,a<span class="sy0">+</span>b<span class="br0">)</span><span class="br0">)</span> <span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span></pre></div></div>
+<h3> <span class="mw-headline" id="A_version_using_some_identities">2.3  A version using some identities </span></h3>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fib <span class="nu0">0</span> <span class="sy0">=</span> <span class="nu0">0</span>
+fib <span class="nu0">1</span> <span class="sy0">=</span> <span class="nu0">1</span>
+fib n <span class="sy0">|</span> <span class="kw3">even</span> n         <span class="sy0">=</span> f1 <span class="sy0">*</span> <span class="br0">(</span>f1 <span class="sy0">+</span> <span class="nu0">2</span> <span class="sy0">*</span> f2<span class="br0">)</span>
+      <span class="sy0">|</span> n `<span class="kw3">mod</span>` <span class="nu0">4</span> <span class="sy0">==</span> <span class="nu0">1</span> <span class="sy0">=</span> <span class="br0">(</span><span class="nu0">2</span> <span class="sy0">*</span> f1 <span class="sy0">+</span> f2<span class="br0">)</span> <span class="sy0">*</span> <span class="br0">(</span><span class="nu0">2</span> <span class="sy0">*</span> f1 <span class="sy0">-</span> f2<span class="br0">)</span> <span class="sy0">+</span> <span class="nu0">2</span>
+      <span class="sy0">|</span> <span class="kw3">otherwise</span>      <span class="sy0">=</span> <span class="br0">(</span><span class="nu0">2</span> <span class="sy0">*</span> f1 <span class="sy0">+</span> f2<span class="br0">)</span> <span class="sy0">*</span> <span class="br0">(</span><span class="nu0">2</span> <span class="sy0">*</span> f1 <span class="sy0">-</span> f2<span class="br0">)</span> <span class="sy0">-</span> <span class="nu0">2</span>
+   <span class="kw1">where</span> k <span class="sy0">=</span> n `<span class="kw3">div</span>` <span class="nu0">2</span>
+         f1 <span class="sy0">=</span> fib k
+         f2 <span class="sy0">=</span> fib <span class="br0">(</span>k<span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span></pre></div></div>
+<p>This seems to use <span class="texhtml" dir="ltr"><i>O</i>(<i>l</i><i>o</i><i>g</i><sup>2</sup><i>n</i>)</span> calls to <code>fib</code>.
+</p>
+<h2> <span class="mw-headline" id="Logarithmic_operation_implementations">3  Logarithmic operation implementations </span></h2>
+<h3> <span class="mw-headline" id="Using_2x2_matrices">3.1  Using 2x2 matrices </span></h3>
+The argument of <div class="inline-code"><div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><span class="kw3">iterate</span></div></div></div> above is a <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Linear_map">linear transformation</a>, so we can represent it as matrix and compute the <i>n</i>th power of this matrix with <i>O(log n)</i> multiplications and additions.
+<p>For example, using the <a href="https://wiki.haskell.org/Prelude_extensions#Matrices" title="Prelude extensions">simple matrix implementation</a> in <a href="https://wiki.haskell.org/Prelude_extensions" title="Prelude extensions">Prelude extensions</a>,
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fib n <span class="sy0">=</span> <span class="kw3">head</span> <span class="br0">(</span>apply <span class="br0">(</span>Matrix <span class="br0">[</span><span class="br0">[</span><span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">]</span>, <span class="br0">[</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">]</span><span class="br0">]</span> <span class="sy0">^</span> n<span class="br0">)</span> <span class="br0">[</span><span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span></pre></div></div>
+<p>This technique works for any linear recurrence.
+</p>
+<h3> <span class="mw-headline" id="Another_fast_fib">3.2  Another fast fib </span></h3>
+<p>(Assumes that the sequence starts with 1.)
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fib <span class="sy0">=</span> <span class="kw3">fst</span> . fib2
+&nbsp;
+<span class="co1">-- | Return (fib n, fib (n + 1))</span>
+fib2 <span class="nu0">0</span> <span class="sy0">=</span> <span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">)</span>
+fib2 <span class="nu0">1</span> <span class="sy0">=</span> <span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">2</span><span class="br0">)</span>
+fib2 n
+ <span class="sy0">|</span> <span class="kw3">even</span> n    <span class="sy0">=</span> <span class="br0">(</span>a<span class="sy0">*</span>a <span class="sy0">+</span> b<span class="sy0">*</span>b, c<span class="sy0">*</span>c <span class="sy0">-</span> a<span class="sy0">*</span>a<span class="br0">)</span>
+ <span class="sy0">|</span> <span class="kw3">otherwise</span> <span class="sy0">=</span> <span class="br0">(</span>c<span class="sy0">*</span>c <span class="sy0">-</span> a<span class="sy0">*</span>a, b<span class="sy0">*</span>b <span class="sy0">+</span> c<span class="sy0">*</span>c<span class="br0">)</span>
+ <span class="kw1">where</span> <span class="br0">(</span>a,b<span class="br0">)</span> <span class="sy0">=</span> fib2 <span class="br0">(</span>n `<span class="kw3">div</span>` <span class="nu0">2</span> <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">)</span>
+       c     <span class="sy0">=</span> a <span class="sy0">+</span> b</pre></div></div>
+<h3> <span class="mw-headline" id="Fastest_Fib_in_the_West">3.3  Fastest Fib in the West </span></h3>
+<p>This was contributed by <a rel="nofollow" class="external text" href="http://www.haskell.org/pipermail/haskell-cafe/2005-January/008839.html">wli</a>
+(It assumes that the sequence starts with 1.)
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1"><span class="kw1">import</span> Data.List
+&nbsp;
+fib1 n <span class="sy0">=</span> <span class="kw3">snd</span> . <span class="kw3">foldl</span> fib_ <span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">0</span><span class="br0">)</span> . <span class="kw3">map</span> <span class="br0">(</span><span class="kw3">toEnum</span> . <span class="kw3">fromIntegral</span><span class="br0">)</span> <span class="sy0">$</span> unfoldl divs n
+    <span class="kw1">where</span>
+        unfoldl f x <span class="sy0">=</span> <span class="kw1">case</span> f x <span class="kw1">of</span>
+                Nothing     <span class="sy0">-&gt;</span> <span class="br0">[</span><span class="br0">]</span>
+                Just <span class="br0">(</span>u, v<span class="br0">)</span> <span class="sy0">-&gt;</span> unfoldl f v <span class="sy0">++</span> <span class="br0">[</span>u<span class="br0">]</span>
+&nbsp;
+        divs <span class="nu0">0</span> <span class="sy0">=</span> Nothing
+        divs k <span class="sy0">=</span> Just <span class="br0">(</span><span class="kw3">uncurry</span> <span class="br0">(</span><span class="kw3">flip</span> <span class="br0">(</span>,<span class="br0">)</span><span class="br0">)</span> <span class="br0">(</span>k `<span class="kw3">divMod</span>` <span class="nu0">2</span><span class="br0">)</span><span class="br0">)</span>
+&nbsp;
+        fib_ <span class="br0">(</span>f, g<span class="br0">)</span> p
+            <span class="sy0">|</span> p         <span class="sy0">=</span> <span class="br0">(</span>f<span class="sy0">*</span><span class="br0">(</span>f<span class="sy0">+</span><span class="nu0">2</span><span class="sy0">*</span>g<span class="br0">)</span>, f<span class="sy0">^</span><span class="nu0">2</span> <span class="sy0">+</span> g<span class="sy0">^</span><span class="nu0">2</span><span class="br0">)</span>
+            <span class="sy0">|</span> <span class="kw3">otherwise</span> <span class="sy0">=</span> <span class="br0">(</span>f<span class="sy0">^</span><span class="nu0">2</span><span class="sy0">+</span>g<span class="sy0">^</span><span class="nu0">2</span>,   g<span class="sy0">*</span><span class="br0">(</span><span class="nu0">2</span><span class="sy0">*</span>f<span class="sy0">-</span>g<span class="br0">)</span><span class="br0">)</span></pre></div></div>
+<p>An even faster version, given later by wli on the <a href="https://wiki.haskell.org/IRC_channel" title="IRC channel">IRC channel</a>.
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1"><span class="kw1">import</span> Data.List
+<span class="kw1">import</span> Data.Bits
+&nbsp;
+fib <span class="sy0">::</span> <span class="kw4">Int</span> <span class="sy0">-&gt;</span> <span class="kw4">Integer</span>
+fib n <span class="sy0">=</span> <span class="kw3">snd</span> . foldl_ fib_ <span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">0</span><span class="br0">)</span> . <span class="kw3">dropWhile</span> <span class="kw3">not</span> <span class="sy0">$</span>
+            <span class="br0">[</span>testBit n k <span class="sy0">|</span> k <span class="sy0">&lt;-</span> <span class="kw1">let</span> s <span class="sy0">=</span> bitSize n <span class="kw1">in</span> <span class="br0">[</span>s<span class="sy0">-</span><span class="nu0">1</span>,s<span class="sy0">-</span><span class="nu0">2</span>..<span class="nu0">0</span><span class="br0">]</span><span class="br0">]</span>
+    <span class="kw1">where</span>
+        fib_ <span class="br0">(</span>f, g<span class="br0">)</span> p
+            <span class="sy0">|</span> p         <span class="sy0">=</span> <span class="br0">(</span>f<span class="sy0">*</span><span class="br0">(</span>f<span class="sy0">+</span><span class="nu0">2</span><span class="sy0">*</span>g<span class="br0">)</span>, ss<span class="br0">)</span>
+            <span class="sy0">|</span> <span class="kw3">otherwise</span> <span class="sy0">=</span> <span class="br0">(</span>ss, g<span class="sy0">*</span><span class="br0">(</span><span class="nu0">2</span><span class="sy0">*</span>f<span class="sy0">-</span>g<span class="br0">)</span><span class="br0">)</span>
+            <span class="kw1">where</span> ss <span class="sy0">=</span> f<span class="sy0">*</span>f<span class="sy0">+</span>g<span class="sy0">*</span>g
+        foldl_ <span class="sy0">=</span> <span class="kw3">foldl</span>' <span class="co1">-- '</span></pre></div></div>
+<h2> <span class="mw-headline" id="Constant-time_implementations">4  Constant-time implementations </span></h2>
+<p>The Fibonacci numbers can be computed in constant time using Binet's formula.
+However, that only works well within the range of floating-point numbers
+available on your platform. Implementing Binet's formula in such a way that it computes exact results for all integers generally doesn't result in a terribly efficient implementation when compared to the programs above which use a logarithmic number of operations (and work in linear time).
+</p><p>Beyond that, you can use <a rel="nofollow" class="external text" href="http://haskell.org/haskellwiki/Applications_and_libraries/Mathematics#Real_and_rational_numbers">unlimited-precision floating-point numbers</a>,
+but the result will probably not be any better than the <a href="https://wiki.haskell.org/The_Fibonacci_sequence#Log-time_implementations">log-time implementations</a> above.
+</p>
+<h3> <span class="mw-headline" id="Using_Binet.27s_formula">4.1  Using Binet's formula </span></h3>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">fib n <span class="sy0">=</span> <span class="kw3">round</span> <span class="sy0">$</span> phi <span class="sy0">**</span> <span class="kw3">fromIntegral</span> n <span class="sy0">/</span> sq5
+  <span class="kw1">where</span>
+    sq5 <span class="sy0">=</span> <span class="kw3">sqrt</span> <span class="nu0">5</span> <span class="sy0">::</span> <span class="kw4">Double</span>
+    phi <span class="sy0">=</span> <span class="br0">(</span><span class="nu0">1</span> <span class="sy0">+</span> sq5<span class="br0">)</span> <span class="sy0">/</span> <span class="nu0">2</span></pre></div></div>
+<h2> <span class="mw-headline" id="Generalization_of_Fibonacci_numbers">5  Generalization of Fibonacci numbers </span></h2>
+<p>The numbers of the traditional Fibonacci sequence are formed by summing its two preceding numbers, with starting values 0 and 1. Variations of the sequence can be obtained by using different starting values and summing a different number of predecessors.
+</p>
+<h3> <span class="mw-headline" id="Fibonacci_n-Step_Numbers">5.1  Fibonacci <i>n</i>-Step Numbers </span></h3>
+<p>The sequence of Fibonacci <i>n</i>-step numbers are formed by summing <i>n</i> predecessors, using (<i>n</i>-1) zeros and a single 1 as starting values:
+<img class="tex" alt="
+  F^{(n)}_k :=
+  \begin{cases}
+    0             &amp; \mbox{if } 0 \leq k &lt; n-1 \\
+    1             &amp; \mbox{if } k = n-1 \\
+    \sum\limits_{i=k-n}^{(k-1)} F^{(n)}_i &amp; \mbox{otherwise} \\
+   \end{cases}
+" src="./The Fibonacci sequence - HaskellWiki_files/80270a0845ea593e81bd45f86b551f54.png">
+</p><p>Note that the summation in the current definition has a time complexity of <i>O(n)</i>, assuming we memoize previously computed numbers of the sequence. We can do better than. Observe that in the following Tribonacci sequence, we compute the number 81 by summing up 13, 24 and 44:
+</p><p><img class="tex" alt="
+F^{(3)} = 0,0,1,1,2,4,7,\underbrace{13,24,44},81,149, \ldots 
+" src="./The Fibonacci sequence - HaskellWiki_files/5193e94156da32e33cd413b55030c2ea.png">
+</p><p>The number 149 is computed in a similar way, but can also be computed as follows:
+</p><p><img class="tex" alt="
+149 = 24 + 44 + 81 = (13 + 24 + 44) + 81 - 13 = 81 + 81 - 13 = 2\cdot 81 - 13
+" src="./The Fibonacci sequence - HaskellWiki_files/cca4a9ed1dec09039c9f4bcd4e029318.png">
+</p><p>And hence, an equivalent definition of the Fibonacci <i>n</i>-step numbers sequence is:
+</p><p><img class="tex" alt="
+  F^{(n)}_k :=
+  \begin{cases}
+    0             &amp; \mbox{if } 0 \leq k &lt; n-1 \\
+    1             &amp; \mbox{if } k = n-1 \\
+    1             &amp; \mbox{if } k = n \\
+    F^{(n)}_k := 2F^{(n)}_{k-1}-F^{(n)}_{k-(n+1)} &amp; \mbox{otherwise} \\
+   \end{cases}
+" src="./The Fibonacci sequence - HaskellWiki_files/4aab6a9bb654e914b4c5e26ac4f876c7.png">
+</p><p><i>(Notice the extra case that is needed)</i>
+</p><p>Transforming this directly into Haskell gives us:
+</p>
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">nfibs n <span class="sy0">=</span> replicate <span class="br0">(</span>n<span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="nu0">0</span> <span class="sy0">++</span> <span class="nu0">1</span> <span class="sy0">:</span> <span class="nu0">1</span> <span class="sy0">:</span>
+          <span class="kw3">zipWith</span> <span class="br0">(</span><span class="sy0">\</span>b a <span class="sy0">-&gt;</span> <span class="nu0">2</span><span class="sy0">*</span>b<span class="sy0">-</span>a<span class="br0">)</span> <span class="br0">(</span><span class="kw3">drop</span> n <span class="br0">(</span>nfibs n<span class="br0">)</span><span class="br0">)</span> <span class="br0">(</span>nfibs n<span class="br0">)</span></pre></div></div>
+This version, however, is slow since the computation of <div class="inline-code"><div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell">nfibs n</div></div></div> is not shared. Naming the result using a let-binding and making the lambda pointfree results in:
+<div dir="ltr" class="mw-geshi mw-content-ltr"><div class="haskell source-haskell"><pre class="de1">nfibs n <span class="sy0">=</span> <span class="kw1">let</span> r <span class="sy0">=</span> replicate <span class="br0">(</span>n<span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="nu0">0</span> <span class="sy0">++</span> <span class="nu0">1</span> <span class="sy0">:</span> <span class="nu0">1</span> <span class="sy0">:</span> <span class="kw3">zipWith</span> <span class="br0">(</span><span class="br0">(</span><span class="sy0">-</span><span class="br0">)</span>.<span class="br0">(</span><span class="nu0">2</span><span class="sy0">*</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">(</span><span class="kw3">drop</span> n r<span class="br0">)</span> r
+          <span class="kw1">in</span> r</pre></div></div>
+<p><br>
+</p>
+<h2> <span class="mw-headline" id="See_also">6  See also </span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://cgi.cse.unsw.edu.au/~dons/blog/2007/11/29">Naive parallel, multicore version</a>
+</li><li> <a href="https://wiki.haskell.org/Fibonacci_primes_in_parallel" title="Fibonacci primes in parallel">Fibonacci primes in parallel</a>
+</li><li> <a rel="nofollow" class="external text" href="http://comments.gmane.org/gmane.comp.lang.haskell.cafe/19623">Discussion at haskell cafe</a>
+</li><li> <a rel="nofollow" class="external text" href="http://www.cubbi.org/serious/fibonacci/haskell.html">Some other nice solutions</a>
+</li><li> In <a rel="nofollow" class="external text" href="http://projecteuler.net/">Project Euler</a>, some of the problems involve Fibonacci numbers. There are some solutions in Haskell (<b>Spoiler Warning:</b> Do not look at solutions to Project Euler problems until you have solved the problems on your own.):
+<ul><li> <a href="https://wiki.haskell.org/Euler_problems/1_to_10#Problem_2" title="Euler problems/1 to 10">Problem 2</a>
+</li><li> <a href="https://wiki.haskell.org/Euler_problems/21_to_30#Problem_25" title="Euler problems/21 to 30">Problem 25</a>
+</li><li> <a href="https://wiki.haskell.org/Euler_problems/101_to_110#Problem_104" title="Euler problems/101 to 110">Problem 104</a>
+</li><li> <a href="https://wiki.haskell.org/Euler_problems/131_to_140#Problem_137" title="Euler problems/131 to 140">Problem 137</a>
+</li></ul>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 335/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb_haskell:pcache:idhash:2500-0!1!0!1!en!*!* and timestamp 20171231181847 -->
+</div><div class="printfooter">
+Retrieved from "<a href="https://wiki.haskell.org/index.php?title=The_Fibonacci_sequence&amp;oldid=61269">https://wiki.haskell.org/index.php?title=The_Fibonacci_sequence&amp;oldid=61269</a>"</div>
+			<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.haskell.org/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.haskell.org/Category:Code" title="Category:Code">Code</a></li></ul></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div></div>
+		<div id="column-one">
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage"><a href="https://wiki.haskell.org/Haskell">Haskell</a></li>
+				<li id="n-portal"><a href="https://wiki.haskell.org/HaskellWiki:Community">Wiki community</a></li>
+				<li id="n-recentchanges"><a href="https://wiki.haskell.org/Special:RecentChanges">Recent changes</a></li>
+				<li id="n-randompage"><a href="https://wiki.haskell.org/Special:Random">Random page</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="https://wiki.haskell.org/Special:WhatLinksHere/The_Fibonacci_sequence">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="https://wiki.haskell.org/Special:RecentChangesLinked/The_Fibonacci_sequence">Related changes</a></li>
+<li id="t-specialpages"><a href="https://wiki.haskell.org/Special:SpecialPages">Special pages</a></li>
+				<li id="t-print"><a href="https://wiki.haskell.org/index.php?title=The_Fibonacci_sequence&amp;printable=yes" rel="alternate">Printable version</a></li>				<li id="t-permalink"><a href="https://wiki.haskell.org/index.php?title=The_Fibonacci_sequence&amp;oldid=61269">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="https://www.mediawiki.org/"><img src="./The Fibonacci sequence - HaskellWiki_files/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki"></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 5 November 2016, at 17:37.</li>
+					<li id="copyright">Recent content is available under <a href="https://wiki.haskell.org/HaskellWiki:Copyrights" title="HaskellWiki:Copyrights">a simple permissive license</a>.</li>
+					<li id="privacy"><a href="https://wiki.haskell.org/HaskellWiki:Privacy_policy" title="HaskellWiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="https://wiki.haskell.org/HaskellWiki:About" title="HaskellWiki:About">About HaskellWiki</a></li>
+					<li id="disclaimer"><a href="https://wiki.haskell.org/HaskellWiki:General_disclaimer" title="HaskellWiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready"], null, true);
+}</script><script src="./The Fibonacci sequence - HaskellWiki_files/load(3).php" type="text/javascript"></script>
+<script src="./The Fibonacci sequence - HaskellWiki_files/load(4).php"></script>
+<!-- Served in 0.080 secs. --><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-83290513-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body></html>
