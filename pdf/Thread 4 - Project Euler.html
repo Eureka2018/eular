@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://projecteuler.net/best_posts=004 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="author" content="Colin Hughes">
+<meta name="description" content="A website dedicated to the fascinating world of mathematics and programming">
+<meta name="keywords" content="programming,mathematics,problems,puzzles">
+<title>Thread 4 - Project Euler</title>
+<link rel="shortcut icon" href="https://projecteuler.net/favicon.ico">
+<link rel="stylesheet" type="text/css" href="./Thread 4 - Project Euler_files/style_default.css">
+<link rel="stylesheet" href="./Thread 4 - Project Euler_files/xcode.css">
+<script src="./Thread 4 - Project Euler_files/highlight.pack.js.下载"></script>
+<script>
+   hljs.tabReplace = '   ';
+   hljs.initHighlightingOnLoad();
+</script><script type="text/x-mathjax-config;executed=true">
+   MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+         inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+         displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+         processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+   });
+</script>
+<script type="text/javascript" async="" src="./Thread 4 - Project Euler_files/MathJax.js.下载"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+<div id="container">
+<div id="header" class="noprint">
+<div id="nav" class="noprint">
+<ul>
+<li><a href="https://projecteuler.net/about" title="About" accesskey="h">About</a></li>
+<li id="current"><a href="https://projecteuler.net/archives" title="Archives" accesskey="1">Archives</a></li>
+<li><a href="https://projecteuler.net/recent" title="Recent" accesskey="2">Recent</a></li>
+<li><a href="https://projecteuler.net/progress" title="Progress" accesskey="3">Progress</a></li>
+<li><a href="https://projecteuler.net/account" title="Account" accesskey="4"><span id="highlight">Account</span></a></li>
+<li><a href="https://projecteuler.net/news" title="News" accesskey="5">News</a></li>
+<li><a href="https://projecteuler.net/friends" title="Friends" accesskey="6">Friends</a></li>
+<li><a href="https://projecteuler.net/statistics" title="Statistics" accesskey="7">Statistics</a></li>
+<li><a href="https://projecteuler.net/sign_out=097126430e2af08dd0e147e1daa06612f2d75316" title="Sign Out" accesskey="8">Sign Out</a></li>
+</ul>
+</div>
+
+<div id="logo" class="noprint">
+   <div>Project Euler<span>.net</span></div>
+</div>
+
+</div>
+
+<div id="info_panel"><div>Logged in as <strong>SeanGo</strong><br>Fri, 5 Jan 2018, 01:52</div><a href="https://projecteuler.net/search"><img src="./Thread 4 - Project Euler_files/icon_search.png" alt="Search Problems" title="Search Problems"></a><a href="https://projecteuler.net/rss2_euler.xml"><img src="./Thread 4 - Project Euler_files/icon_rss.png" alt="RSS Feed" title="RSS Feed"></a></div>
+<div id="content">
+
+<div id="forum_page">
+<script type="text/javascript">
+function toggle(post_id) {
+   var contentDiv = document.getElementById("content_"+post_id);
+   var clickDiv = document.getElementById("click_"+post_id);
+   if (contentDiv.style.display=="block") {
+      contentDiv.style.display = "none";
+      clickDiv.innerHTML = "Show Code";
+   } else {
+      contentDiv.style.display = "block";
+      clickDiv.innerHTML = "Hide Code";
+   }
+}
+</script>
+
+<h2><a href="https://projecteuler.net/problem=4" id="problem_link">Problem 4 - Best Posts</a></h2><div id="cache_info">Best post cache update: 59 minutes</div><br><div style="float:right;text-align:right;">2/5 Kudos remaining&nbsp;&nbsp;&nbsp;<a href="https://projecteuler.net/overview=004" title="Download overview PDF"><img src="./Thread 4 - Project Euler_files/icon_pdf.png" alt=""></a>&nbsp;&nbsp;&nbsp;<a href="https://projecteuler.net/thread=004" title="Go back to thread"><img src="./Thread 4 - Project Euler_files/icon_forum.png" alt=""></a></div><div><b>Showing posts 1 to 25 out of 25</b></div><br><a class="anchor" id="1214">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Mon, 23 May 2005, 21:26</div><span style="font-weight:bold;">Begoner</span><br>Python&nbsp; <br><img src="./Thread 4 - Project Euler_files/Romania.gif" title="Romania" alt="Romania" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=1214"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=1214-7aef445427f31d6e0a2217e336b07dfa187b6182">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=1214-7aef445427f31d6e0a2217e336b07dfa187b6182">Report</a>&nbsp; &nbsp;<a title="Remove Kudos" href="https://projecteuler.net/kudos_post=1214-7aef445427f31d6e0a2217e336b07dfa187b6182"><img src="./Thread 4 - Project Euler_files/icon_thumb_up_voted.png"> 591</a></div></td></tr><tr><td><div class="forum_message">You can also do this with pen and paper.  You have a number:
+
+(100a + 10b + c)(100d + 10e + f) 
+
+Which is a palindrone.  This factors out to:
+
+                   100cd + 10ce + cf +
+          1000bd + 100be + 10bf +
+10000ad + 1000ae + 100af
+
+Assuming the first digit is 9, then cf must be equal to nine.
+Also, both a and d must then be equal to nine.  The only ways
+to make the last digit of the product of two integers 9 would
+be if those integers were either of:
+
+1 and 9
+3 and 3
+7 and 7
+
+So, both numbers must start with 9, end with either 1, 3, 7,
+or 9, and one of them must be divisible by 11.  The only 
+numbers divisible by 11 from 900 - 1000 are:
+
+902
+<b>913</b>
+924
+935
+946
+<b>957</b>
+968
+<b>979</b>
+990
+
+You can discard all of those that do not end in either 1, 3,
+7, or 9, and you are left with:
+
+913
+957
+979
+
+So now the presumed answer is either:
+
+(900 + 10 + 3)(900 + 10x + 3)
+(900 + 50 + 7)(900 + 10x + 7)
+(900 + 70 + 9)(900 + 10x + 1)
+
+Factoring all those out, you get:
+
+810000 + 9000x + 2700 + 9000 + 100x + 30 + 2700 + 30x + 9
+824439 + 9130x
+
+Now, for the first digit 824439 + 9130x to be 9, x must be 9
+(if x were 8, then 824439 + 9130x = 897479, and the first
+digit is 8).  And so you have 913 * 993, which is the answer.
+You can factor the others out to see if they produce a bigger
+answer, which they don't.</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="1211">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Mon, 23 May 2005, 00:15</div><span style="font-weight:bold;">Begoner</span><br>Python&nbsp; <br><img src="./Thread 4 - Project Euler_files/Romania.gif" title="Romania" alt="Romania" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=1211"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=1211-219bed3ae8033b98c63166e25dd8d96d38077c5f">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=1211-219bed3ae8033b98c63166e25dd8d96d38077c5f">Report</a>&nbsp; &nbsp;<a title="Remove Kudos" href="https://projecteuler.net/kudos_post=1211-219bed3ae8033b98c63166e25dd8d96d38077c5f"><img src="./Thread 4 - Project Euler_files/icon_thumb_up_voted.png"> 346</a></div></td></tr><tr><td><div class="forum_message">The palindrome can be written as:
+
+abccba
+
+Which then simpifies to:
+
+100000a + 10000b + 1000c + 100c + 10b + a
+
+And then:
+
+100001a + 10010b + 1100c
+
+Factoring out 11, you get:
+
+11(9091a + 910b + 100c)
+
+So the palindrome must be divisible by 11.  Seeing as 11 is prime, at least one of the numbers must be divisible by 11.  So brute force in Python, only with less numbers to be checked:
+
+<div class="code_click" onclick="javascript:toggle(&#39;HwWvzigcXrFZNZRm&#39;)"><table><tbody><tr><td><div style="text-align:left;">Python</div></td><td><div id="click_HwWvzigcXrFZNZRm">Show Code</div></td></tr></tbody></table></div><div id="content_HwWvzigcXrFZNZRm" class="code_box"><pre><code class="language-python hljs "><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">c</span><span class="hljs-params">()</span>:</span>
+	max = maxI = maxJ = <span class="hljs-number">0</span>
+	i = <span class="hljs-number">999</span>
+	j = <span class="hljs-number">990</span>
+	<span class="hljs-keyword">while</span> (i &gt; <span class="hljs-number">100</span>):
+		j = <span class="hljs-number">990</span>
+		<span class="hljs-keyword">while</span> (j &gt; <span class="hljs-number">100</span>):
+			product = i * j
+			<span class="hljs-keyword">if</span> (product &gt; max):
+				productString = str(product)
+				<span class="hljs-keyword">if</span> (productString == productString[::-<span class="hljs-number">1</span>]):
+					max = product
+					maxI = i
+					maxJ = j
+			j -= <span class="hljs-number">11</span>
+		i -= <span class="hljs-number">1</span>
+	<span class="hljs-keyword">return</span> max, maxI, maxJ</code></pre></div>
+
+Returns an answer in 0.016 secs.</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="300">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Sun, 22 Aug 2004, 04:48</div><span style="font-weight:bold;">etatsui</span><br>C#&nbsp; <br><img src="./Thread 4 - Project Euler_files/Japan.gif" title="Japan" alt="Japan" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=300"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=300-530c982ffbf56597f6380f7e0ac9bc623ffc801c">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=300-530c982ffbf56597f6380f7e0ac9bc623ffc801c">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=300-530c982ffbf56597f6380f7e0ac9bc623ffc801c"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 166</a></div></td></tr><tr><td><div class="forum_message">The palindrome can be written as
+11(9091a + 910b + 100c) = mn;
+a,b &amp; c being 1 digit integers and m &amp; n being 3 digit intergers.
+
+Let 11 * 10 &lt; m &lt; 11 * 90;
+
+for(int a=9; a&gt;=1; a--)
+  for(int b=9; b&gt;=0; b--)
+    for(int c=9; c&gt;=0; c--){
+      num = 9091 * a + 910 * b + 100 * c;
+      for(int divider=90; divider&gt;=10; divider--){
+        //look for divider that can divide 
+        //and also doesn't make n &gt; 999
+	if((num % divider) == 0){
+	  if((num / divider) &gt; 999)
+	    break;
+	  else
+	    result = num * 11; //Found it!
+	} else { break; }
+      }</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="2632">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Tue, 17 Jan 2006, 13:54</div><span style="font-weight:bold;">iang</span><br>Python&nbsp; <br><img src="./Thread 4 - Project Euler_files/England.gif" title="England" alt="England" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=2632"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=2632-9ffc404f49eeedc4e6cc913500f3c1c6cc3723b3">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=2632-9ffc404f49eeedc4e6cc913500f3c1c6cc3723b3">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=2632-9ffc404f49eeedc4e6cc913500f3c1c6cc3723b3"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 86</a></div></td></tr><tr><td><div class="forum_message">Python one-liner
+
+<div class="code_click" onclick="javascript:toggle(&#39;4oMLIWULR3vBL9FG&#39;)"><table><tbody><tr><td><div style="text-align:left;">Python</div></td><td><div id="click_4oMLIWULR3vBL9FG">Show Code</div></td></tr></tbody></table></div><div id="content_4oMLIWULR3vBL9FG" class="code_box"><pre><code class="language-python hljs ">max([x*y <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">900</span>,<span class="hljs-number">1000</span>) <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> range(<span class="hljs-number">900</span>,<span class="hljs-number">1000</span>) <span class="hljs-keyword">if</span> str(x*y) == str(x*y)[::-<span class="hljs-number">1</span>]])</code></pre></div></div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="838">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Fri, 31 Dec 2004, 17:03</div><span style="font-weight:bold;">REBoss</span><br>APL/J/K&nbsp; <br><img src="./Thread 4 - Project Euler_files/Netherlands.gif" title="Netherlands" alt="Netherlands" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=838"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=838-8f3380c9cc32e66becf52b3e39111b8734405c38">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=838-8f3380c9cc32e66becf52b3e39111b8734405c38">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=838-8f3380c9cc32e66becf52b3e39111b8734405c38"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 66</a></div></td></tr><tr><td><div class="forum_message">In J:
+&gt;([:{: ]#~ (=|.&amp;.&gt;)) &lt;@":"0 /:~(0:-.~[:,&gt;:/**/)~(i.100)-.~i.1000</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="41">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Wed, 5 Jan 2005, 08:26</div><span style="font-weight:bold;">bitRAKE</span><br>Assembly&nbsp; <br><img src="./Thread 4 - Project Euler_files/USA.gif" title="USA" alt="USA" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=41"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=41-06a12d7a7d76f03e1cc818937ba8f10d6e5bfd89">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=41-06a12d7a7d76f03e1cc818937ba8f10d6e5bfd89">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=41-06a12d7a7d76f03e1cc818937ba8f10d6e5bfd89"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 43</a></div></td></tr><tr><td><div class="forum_message">I brute force of course:
+<div class="code_click" onclick="javascript:toggle(&#39;z3ZdqYpuz0fg07HC&#39;)"><table><tbody><tr><td><div style="text-align:left;">Assembly</div></td><td><div id="click_z3ZdqYpuz0fg07HC">Show Code</div></td></tr></tbody></table></div><div id="content_z3ZdqYpuz0fg07HC" class="code_box"><pre><code class="language-avrasm hljs "><span class="hljs-comment">; maximum palidrome</span>
+	xor ebx, ebx
+
+	<span class="hljs-comment">; two three digit numbers</span>
+	<span class="hljs-keyword">mov</span>	esi, <span class="hljs-number">999</span>
+<span class="hljs-label">_0:</span>	<span class="hljs-keyword">mov</span>	edi, <span class="hljs-number">999</span>
+<span class="hljs-label">_1:</span>	<span class="hljs-comment">; multiplied together</span>
+	<span class="hljs-keyword">mov</span> ecx, esi
+	imul ecx, edi
+
+	<span class="hljs-comment">; Is palindrome?</span>
+	<span class="hljs-keyword">push</span> ecx
+	<span class="hljs-keyword">push</span> ecx
+	<span class="hljs-keyword">push</span> ecx
+	fild DWORD PTR [esp]
+	fbstp TBYTE PTR [esp]
+
+	<span class="hljs-comment">; five or six digits</span>
+	<span class="hljs-keyword">mov</span> edx, DWORD PTR [esp]
+	<span class="hljs-keyword">mov</span> eax, edx
+	<span class="hljs-keyword">and</span> edx,  <span class="hljs-number">0</span>F0F0Fh
+	<span class="hljs-keyword">and</span> eax, <span class="hljs-number">0</span>F0F0F0h
+	cmp DWORD PTR [esp], <span class="hljs-number">100000</span>h
+	jc five
+<span class="hljs-comment">; six digits</span>
+	<span class="hljs-comment">; 00 AB CD EF</span>
+	shl edx, <span class="hljs-number">4</span>+<span class="hljs-number">8</span>
+	shl eax, <span class="hljs-number">4</span>
+	<span class="hljs-keyword">or</span> eax, edx
+	bswap eax
+	<span class="hljs-comment">; 00 FE DC BA</span>
+	<span class="hljs-keyword">jmp</span> check
+
+<span class="hljs-label">five:</span>	<span class="hljs-comment">; 00 0A BC DE</span>
+	shl edx, <span class="hljs-number">8</span>
+	shl eax, <span class="hljs-number">16</span>
+	<span class="hljs-keyword">or</span> eax, edx
+	bswap eax
+	<span class="hljs-comment">; 00 0E DC BA	</span>
+<span class="hljs-label">check:</span>	cmp DWORD PTR [esp], eax
+	lea esp, [esp + <span class="hljs-number">12</span>]
+	jne @F
+	cmp ebx, eax
+	cmovc ebx, eax
+@@:	<span class="hljs-keyword">dec</span> edi
+	cmp edi, <span class="hljs-number">99</span>
+	jne _1
+	<span class="hljs-keyword">dec</span> esi
+	cmp esi, <span class="hljs-number">99</span>
+	jne _0</code></pre></div></div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="37440">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;cursor:help;" title="Edited Sun, 6 Oct 2013, 08:35">Sun, 25 Sep 2011, 10:35</div><span style="font-weight:bold;">Lucy_Hedgehog</span>&nbsp;&nbsp;&nbsp;<img src="./Thread 4 - Project Euler_files/icon_dev_team.png" title="Development Team"><br>Python&nbsp; <br><img src="./Thread 4 - Project Euler_files/Switzerland.gif" title="Switzerland" alt="Switzerland" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=37440"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=37440-a7547bc8a6f0cc532c32d31309ced82be74de076">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=37440-a7547bc8a6f0cc532c32d31309ced82be74de076">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=37440-a7547bc8a6f0cc532c32d31309ced82be74de076"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 43</a></div></td></tr><tr><td><div class="forum_message">I have a few more solutions for different sizes:
+
+# n=2  9009 = 91 * 99
+# n=3  906609 = 913 * 993
+# n=4  99000099 = 9901 * 9999
+# n=5  9966006699 = 99681 * 99979
+# n=6  999000000999 = 999001 * 999999
+# n=7  99956644665999 = 9997647 * 9998017
+# n=8  9999000000009999 = 99990001 * 99999999
+# n=9  999900665566009999 = 999980347 * 999920317
+# n=10 99999834000043899999 = 9999996699 * 9999986701
+# n=11 9999994020000204999999 = 99999996349 * 99999943851
+# n=12 999999000000000000999999 = 999999999999 * 999999000001
+# n=13 99999963342000024336999999 = 9999999993349 * 9999996340851
+# n=14 9999999000000000000009999999 = 99999999999999 * 99999990000001
+# n=15 999999974180040040081479999999 = 999999998341069 * 999999975838971
+# n=16 99999999000000000000000099999999 = 9999999999999999 * 9999999900000001
+# n=18 999999999470552640046255074999999999 = 999999999889625119 * 999999999580927521
+# n=19 99999999988837057200275073888999999999 = 9999999999632783059 * 9999999999250922661
+# n=20 9999999999694448232002328444969999999999 = 99999999998547088359 * 99999999998397393961
+
+The following code find the largest palindrom for all n &lt;= 16 in less than 1 minute. 
+<div class="code_click" onclick="javascript:toggle(&#39;tkuxUoNtqIfvqHck&#39;)"><table><tbody><tr><td><div style="text-align:left;">Python</div></td><td><div id="click_tkuxUoNtqIfvqHck">Show Code</div></td></tr></tbody></table></div><div id="content_tkuxUoNtqIfvqHck" class="code_box"><pre><code class="language-python hljs ">
+<span class="hljs-comment"># Using python 3.0</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ispalindrome</span><span class="hljs-params">(x)</span>:</span>
+    s = str(x)
+    <span class="hljs-keyword">return</span> s == s[::-<span class="hljs-number">1</span>]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inverse</span><span class="hljs-params">(x,mod)</span>:</span>
+    <span class="hljs-string">"""Compute the modular inverse of x modulo a power of 10.
+    Return None if the inverse does not exist.
+    This function uses Hensel lifting."""</span>
+    a = [<span class="hljs-keyword">None</span>, <span class="hljs-number">1</span>, <span class="hljs-keyword">None</span>, <span class="hljs-number">7</span>, <span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span>, <span class="hljs-number">3</span>, <span class="hljs-keyword">None</span>, <span class="hljs-number">9</span>][x%<span class="hljs-number">10</span>]
+    <span class="hljs-keyword">if</span> a == <span class="hljs-keyword">None</span>: <span class="hljs-keyword">return</span> a
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        ax = a*x % mod
+        <span class="hljs-keyword">if</span> ax == <span class="hljs-number">1</span>: <span class="hljs-keyword">return</span> a
+        a = (a * (<span class="hljs-number">2</span> - ax)) % mod
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pal2</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-keyword">assert</span> n &gt; <span class="hljs-number">2</span>
+
+    <span class="hljs-comment"># Get a lower bound:</span>
+    <span class="hljs-comment"># If n is even then we can construct a first palindrome.</span>
+    <span class="hljs-comment"># If n is odd we simply guess</span>
+    k = n//<span class="hljs-number">2</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+      maxf = <span class="hljs-number">10</span>**n - <span class="hljs-number">1</span>
+      maxf11 = (maxf - <span class="hljs-number">11</span>) // <span class="hljs-number">22</span> * <span class="hljs-number">22</span> + <span class="hljs-number">11</span>
+      minf = <span class="hljs-number">10</span>**n - <span class="hljs-number">10</span>**(n-k) + <span class="hljs-number">1</span>
+      <span class="hljs-keyword">if</span> <span class="hljs-number">2</span>*k == n:
+        best = maxf * minf
+        factors = (maxf, minf)
+        <span class="hljs-keyword">assert</span> ispalindrome(best)
+      <span class="hljs-keyword">else</span>:
+        best = minf * minf
+        factors = <span class="hljs-keyword">None</span>
+      <span class="hljs-comment"># This palindrome starts with k 9's.</span>
+      <span class="hljs-comment"># Hence the largest palindrom must also start with k 9's and</span>
+      <span class="hljs-comment"># therefore end with k 9's.</span>
+      <span class="hljs-comment"># Thus, if p = x * y is the solution then</span>
+      <span class="hljs-comment"># x * y + 1 is divisible by mod.</span>
+      mod = <span class="hljs-number">10</span>**k
+      <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(maxf11, <span class="hljs-number">1</span>, -<span class="hljs-number">22</span>):
+        <span class="hljs-keyword">if</span> x * maxf &lt; best:
+            <span class="hljs-keyword">break</span>
+        ry = inverse(x, mod)
+        <span class="hljs-keyword">if</span> ry == <span class="hljs-keyword">None</span>:
+            <span class="hljs-keyword">continue</span>
+        maxy = maxf + <span class="hljs-number">1</span> - ry
+        <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> range(maxy * x, best, -x * mod):
+            <span class="hljs-keyword">if</span> ispalindrome(p):
+                <span class="hljs-keyword">if</span> p &gt; best: 
+                    best = p
+                    y = p//x
+                    factors = (x, y)
+      <span class="hljs-keyword">if</span> factors:
+        <span class="hljs-keyword">return</span> best, factors
+      <span class="hljs-keyword">else</span>: k-=<span class="hljs-number">1</span>
+
+</code></pre></div></div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="661">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Sat, 17 Sep 2005, 04:14</div><span style="font-weight:bold;">Olathe</span><br>Haskell&nbsp; <br><img src="./Thread 4 - Project Euler_files/USA.gif" title="USA" alt="USA" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=661"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=661-839cc5a792b851f29377e1a73db2f5cbe27afca8">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=661-839cc5a792b851f29377e1a73db2f5cbe27afca8">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=661-839cc5a792b851f29377e1a73db2f5cbe27afca8"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 35</a></div></td></tr><tr><td><div class="forum_message">In Ruby :
+
+<div class="code_click" onclick="javascript:toggle(&#39;JCTjlIXsXGUOYLJD&#39;)"><table><tbody><tr><td><div style="text-align:left;">Haskell</div></td><td><div id="click_JCTjlIXsXGUOYLJD">Show Code</div></td></tr></tbody></table></div><div id="content_JCTjlIXsXGUOYLJD" class="code_box"><pre><code class="language-haskell hljs "><span class="hljs-title">max</span> = <span class="hljs-number">0</span>
+<span class="hljs-number">100.</span>upto(<span class="hljs-number">999</span>) { |a|
+  a.upto(<span class="hljs-number">999</span>) { |b|
+    prod = a * b
+    max = [max, prod].max <span class="hljs-keyword">if</span> prod.to_s == prod.to_s.reverse
+  }
+}
+<span class="hljs-title">puts</span> <span class="hljs-string">"Maximum palindrome is #{ max }."</span></code></pre></div></div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="1056">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Thu, 3 Mar 2005, 18:09</div><span style="font-weight:bold;"></span>&nbsp; <img src="./Thread 4 - Project Euler_files/spacer.gif" width="21" height="1" alt=""></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=1056"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=1056-1f38d4a7a9de6358bbd8dd4062445e2f72255275">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=1056-1f38d4a7a9de6358bbd8dd4062445e2f72255275">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=1056-1f38d4a7a9de6358bbd8dd4062445e2f72255275"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 33</a></div></td></tr><tr><td><div class="forum_message">In Java..
+
+		int max=0;
+		for(int i=100;i&lt;=999;i++)
+			for(int j=100;j&lt;=999;j++)
+				if (palin(j*i))
+					if(j*i&gt;max)
+						max=j*i;
+		
+		System.out.println(max);
+
+
+
+Note: I've created 2 utility methods for Palindrome and Reverse
+
+	public static long rev(long n)
+        { // This method simply returns a reversed number
+		
+		String s=""+n;
+		StringBuffer sb=new StringBuffer(s);
+		sb=sb.reverse();
+		s=""+sb;
+		
+		return Long.parseLong(s);
+	}
+		
+	public static boolean palin(int n)
+	{  //This method checks if a number is palin or no
+		
+		String s1=""+n;
+		String s2=""+rev(n);
+		if(s1.equals(s2))
+			return true;
+		
+		return false;
+	}</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="2189">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;cursor:help;" title="Edited Sat, 8 Mar 2014, 13:38">Thu, 10 Nov 2005, 20:10</div><span style="font-weight:bold;">quangntenemy</span><br>Java&nbsp; <br><img src="./Thread 4 - Project Euler_files/Vietnam.gif" title="Vietnam" alt="Vietnam" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=2189"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=2189-f5063528de89216ca870537e8eae9ce27fa0df4e">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=2189-f5063528de89216ca870537e8eae9ce27fa0df4e">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=2189-f5063528de89216ca870537e8eae9ce27fa0df4e"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 29</a></div></td></tr><tr><td><div class="forum_message">Haskell
+<div class="code_click" onclick="javascript:toggle(&#39;JNGnVZD22WVD3C0Q&#39;)"><table><tbody><tr><td><div style="text-align:left;">Haskell</div></td><td><div id="click_JNGnVZD22WVD3C0Q">Hide Code</div></td></tr></tbody></table></div><div id="content_JNGnVZD22WVD3C0Q" class="code_box" style="display: block;"><pre><code class="language-haskell hljs ">[m | a &lt;- [<span class="hljs-number">9</span>], b &lt;- [<span class="hljs-number">0.</span><span class="hljs-number">.9</span>], c &lt;- [<span class="hljs-number">0.</span><span class="hljs-number">.9</span>], m &lt;- [<span class="hljs-number">100001</span>* a + <span class="hljs-number">10010</span> * b + <span class="hljs-number">1100</span> * c], [x | x &lt;- [<span class="hljs-number">100.</span><span class="hljs-number">.999</span>], m `mod` x == <span class="hljs-number">0</span> &amp;&amp; m `div` x &lt; <span class="hljs-number">1000</span>] /= []]</code></pre></div></div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="1631">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Wed, 24 Aug 2005, 16:30</div><span style="font-weight:bold;">ebgreen</span><br>PowerShell&nbsp; <br><img src="./Thread 4 - Project Euler_files/USA.gif" title="USA" alt="USA" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=1631"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=1631-be7861ce7b4164aad4d4c6119369e605a47da401">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=1631-be7861ce7b4164aad4d4c6119369e605a47da401">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=1631-be7861ce7b4164aad4d4c6119369e605a47da401"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 20</a></div></td></tr><tr><td><div class="forum_message">My brute force Python solution. I am using these Math Challenges to learn Python, so my solutions are rarely the best. :)
+
+<div class="code_click" onclick="javascript:toggle(&#39;Jsxemy4nouyQh6Jr&#39;)"><table><tbody><tr><td><div style="text-align:left;"><span style="color:#633;cursor:help;" title="PowerShell is not currently supported by syntax highlighter"></span></div></td><td><div id="click_Jsxemy4nouyQh6Jr">Show Code</div></td></tr></tbody></table></div><div id="content_Jsxemy4nouyQh6Jr" class="code_box"><pre><code class=" hljs python">
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">IsPalindrome</span><span class="hljs-params">(n)</span>:</span>
+	myStr = str(n)
+	<span class="hljs-keyword">if</span> myStr == myStr[::-<span class="hljs-number">1</span>]:
+		<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+	<span class="hljs-keyword">else</span>:
+		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+<span class="hljs-keyword">import</span> time
+
+tStart = time.time()
+nResult = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">100</span>,<span class="hljs-number">1000</span>):
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">100</span>,<span class="hljs-number">1000</span>):
+	<span class="hljs-keyword">if</span> IsPalindrome(i*j) == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> (i*j) &gt; nResult:
+	    nResult = (i*j)
+<span class="hljs-keyword">print</span> <span class="hljs-string">"Winner = "</span> + str(nResult)
+<span class="hljs-keyword">print</span> <span class="hljs-string">"run time = "</span> + str((time.time() - tStart))
+</code></pre></div></div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="968">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Wed, 2 Feb 2005, 16:01</div><span style="font-weight:bold;">alereborn</span>&nbsp; <br><img src="./Thread 4 - Project Euler_files/Argentina.gif" title="Argentina" alt="Argentina" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=968"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=968-982b456e96ee11e1d029dc9bca1249000c98a04d">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=968-982b456e96ee11e1d029dc9bca1249000c98a04d">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=968-982b456e96ee11e1d029dc9bca1249000c98a04d"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 18</a></div></td></tr><tr><td><div class="forum_message">brute force in python...
+
+<div class="code_click" onclick="javascript:toggle(&#39;csz9VkWIAhFt2C1E&#39;)"><table><tbody><tr><td><div style="text-align:left;"><span style="color:#633;cursor:help;"></span></div></td><td><div id="click_csz9VkWIAhFt2C1E">Show Code</div></td></tr></tbody></table></div><div id="content_csz9VkWIAhFt2C1E" class="code_box"><pre><code class=" hljs python">
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ispalindrome</span><span class="hljs-params">(string)</span>:</span>
+	decide=<span class="hljs-number">1</span>
+	i=<span class="hljs-number">0</span>
+	<span class="hljs-keyword">while</span> i&lt;=int(len(string)/<span class="hljs-number">2</span>) <span class="hljs-keyword">and</span> decide==<span class="hljs-number">1</span>:
+		<span class="hljs-keyword">if</span> string[i]!=string[-(i+<span class="hljs-number">1</span>)]:
+			decide=<span class="hljs-number">0</span>
+		i+=<span class="hljs-number">1</span>
+	<span class="hljs-keyword">return</span> decide
+
+<span class="hljs-keyword">if</span> __name__==<span class="hljs-string">'__main__'</span>:
+    aux=<span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> range(<span class="hljs-number">101</span>,<span class="hljs-number">1000</span>):
+	<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">101</span>,<span class="hljs-number">1000</span>):
+		<span class="hljs-keyword">if</span> ispalindrome(str(j*k)) <span class="hljs-keyword">and</span> j*k&gt;aux:
+			aux=j*k
+    <span class="hljs-keyword">print</span> aux
+
+</code></pre></div>
+
+
+I would really appreciate if VRAbi and R.E.Boss could tell me what langauge are they using... and why is it so criptic...</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="6526">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;cursor:help;" title="Edited Sat, 17 Mar 2007, 00:22">Sat, 17 Mar 2007, 00:10</div><span style="font-weight:bold;">yeus</span><br>C/C++&nbsp; <br><img src="./Thread 4 - Project Euler_files/Germany.gif" title="Germany" alt="Germany" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=6526"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=6526-ba521c3518d619a14219ad049640c0c092095fa0">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=6526-ba521c3518d619a14219ad049640c0c092095fa0">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=6526-ba521c3518d619a14219ad049640c0c092095fa0"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 12</a></div></td></tr><tr><td><div class="forum_message">my highly optimized C++ -version which takes only 373 nanoseconds (=3.73*10^-7s on a 1.8GHz, optimized build, using microsofts C++ compiler (2005 version) :):
+
+<div class="code_click" onclick="javascript:toggle(&#39;Adz7jDOStNOtQHap&#39;)"><table><tbody><tr><td><div style="text-align:left;">C/C++</div></td><td><div id="click_Adz7jDOStNOtQHap">Show Code</div></td></tr></tbody></table></div><div id="content_Adz7jDOStNOtQHap" class="code_box"><pre><code class="language-cpp hljs ">
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> FindLargestPalindromicNumber()
+{
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> x=<span class="hljs-number">9</span>;x&gt;=<span class="hljs-number">0</span>;--x){	<span class="hljs-keyword">int</span> a=x*<span class="hljs-number">100001</span>;
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> y=<span class="hljs-number">9</span>;y&gt;=<span class="hljs-number">0</span>;--y){	<span class="hljs-keyword">int</span> b=a+y*<span class="hljs-number">10010</span>;
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> z=<span class="hljs-number">9</span>;z&gt;=<span class="hljs-number">0</span>;--z){	<span class="hljs-keyword">int</span> n=b+z*<span class="hljs-number">1100</span>;
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">990</span>;i&gt;<span class="hljs-number">99</span>;i-=<span class="hljs-number">11</span>){
+			<span class="hljs-keyword">if</span>(n%i==<span class="hljs-number">0</span>){
+				<span class="hljs-keyword">int</span> t=n/i;
+				<span class="hljs-keyword">if</span>(t&lt;<span class="hljs-number">1000</span>)<span class="hljs-keyword">return</span> n;
+	}}}}}
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+
+</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="1894">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Sun, 18 Sep 2005, 04:57</div><span style="font-weight:bold;">gel</span><br>C/C++&nbsp; <br><img src="./Thread 4 - Project Euler_files/USA.gif" title="USA" alt="USA" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=1894"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=1894-9ee9c4b16c54f6ca3f4a6d17d94d500e77166e43">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=1894-9ee9c4b16c54f6ca3f4a6d17d94d500e77166e43">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=1894-9ee9c4b16c54f6ca3f4a6d17d94d500e77166e43"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 10</a></div></td></tr><tr><td><div class="forum_message">C - brute force
+<div class="code_click" onclick="javascript:toggle(&#39;1jyfJUNuK03aTiNO&#39;)"><table><tbody><tr><td><div style="text-align:left;">C/C++</div></td><td><div id="click_1jyfJUNuK03aTiNO">Show Code</div></td></tr></tbody></table></div><div id="content_1jyfJUNuK03aTiNO" class="code_box"><pre><code class="language-cpp hljs ">
+<span class="hljs-preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#include &lt;string.h&gt;</span>
+
+<span class="hljs-keyword">int</span> main(<span class="hljs-keyword">void</span>)
+{
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">int</span> y;
+    <span class="hljs-keyword">int</span> z;
+    <span class="hljs-keyword">int</span> max = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">char</span> a[<span class="hljs-number">7</span>];
+    <span class="hljs-keyword">char</span> b[<span class="hljs-number">7</span>];
+
+    <span class="hljs-keyword">for</span>(x = <span class="hljs-number">999</span> ; x &gt; <span class="hljs-number">99</span> ; x--)
+    {
+        <span class="hljs-keyword">for</span>(y = <span class="hljs-number">999</span> ; y &gt; <span class="hljs-number">99</span> ; y--)
+        {
+            z = x * y;
+            <span class="hljs-built_in">sprintf</span>(a, <span class="hljs-string">"%d"</span>, z);
+            <span class="hljs-built_in">strcpy</span>(b, a);
+            _strrev(b);
+            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(a, b) == <span class="hljs-number">0</span>)
+            {
+                <span class="hljs-keyword">if</span>(z &gt; max)
+                {
+                    max = z;
+                }
+            }
+        }
+    }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Answer = %d\n"</span>, max);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre></div>
+
+Very similar to Neitsa's.
+
+</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="3961">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;cursor:help;" title="Edited Tue, 9 May 2006, 21:49">Tue, 9 May 2006, 21:44</div><span style="font-weight:bold;">andylaw</span><br>Perl&nbsp; <br><img src="./Thread 4 - Project Euler_files/Scotland.gif" title="Scotland" alt="Scotland" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=3961"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=3961-d886a3100bc30b968cd19c71a2c70c5f0d577b74">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=3961-d886a3100bc30b968cd19c71a2c70c5f0d577b74">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=3961-d886a3100bc30b968cd19c71a2c70c5f0d577b74"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 9</a></div></td></tr><tr><td><div class="forum_message">A slightly refined version in Ruby with a bit of applied thought. If we start from 999 and work DOWN (rather than the way that everyone uses by default of starting at 100 and working up) then we can home in on the solution quicker.
+
+Also, by breaking out of the inner loop when we find a palindrome (because we aren't going to find a bigger value in this loop if we're decrementing the inner loop) we can save further time.
+
+Finally, by stopping the search when the outer loop is less than the sqrt of the highest palindrome found thus far we can save ourselves even more time.
+
+This cuts down the search space by more than 92% by my reckoning.
+
+&lt;div style='padding:.5em;border:1px solid black;background:#ffc;' class='info'&gt;
+[tt=]
+#!/usr/bin/ruby
+
+# Euler problem 004
+
+# Variables for recording the highest value seen
+max = 0
+
+# Iterate DOWN - because we'll find the highest value
+# quicker that way
+999.downto(100) do |n|
+
+# If we already found something bigger than the square of our
+# outer (higher) loop number then we can stop
+	if (n*n &lt; max) then
+		break
+	end
+# Again, iterate DOWN
+n.downto(100) do |m|
+
+# calculate the product and check if it is a palindrome
+# If it is, and it's bigger than the best one we've seen to now
+# then record it as the biggest and break out of the inner loop
+# because we aren't going to find a bigger value for this value
+# in the outer loop
+		i = (n * m)
+		s = i.to_s
+		if (s == s.reverse) then
+			if (i &gt; max) then
+				max = i
+			end
+			break
+		end
+	end
+end
+
+# Once we're done, report the highest value seen
+puts max
+[/tt]&lt;/div&gt;</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="58">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Sun, 25 Jul 2004, 18:49</div><span style="font-weight:bold;">rayfil</span>&nbsp;&nbsp;&nbsp;<img src="./Thread 4 - Project Euler_files/icon_administrator.png" title="Administrator"><br>Assembly&nbsp; <br><img src="./Thread 4 - Project Euler_files/Canada.gif" title="Canada" alt="Canada" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=58"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=58-c1d0058b695ff2bdbf64cdfd4d8b9fcebab90cf4">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=58-c1d0058b695ff2bdbf64cdfd4d8b9fcebab90cf4">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=58-c1d0058b695ff2bdbf64cdfd4d8b9fcebab90cf4"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 8</a></div></td></tr><tr><td><div class="forum_message"><div class="code_click" onclick="javascript:toggle(&#39;oIjQ9gUxIBKpt2HI&#39;)"><table><tbody><tr><td><div style="text-align:left;">Assembly</div></td><td><div id="click_oIjQ9gUxIBKpt2HI">Show Code</div></td></tr></tbody></table></div><div id="content_oIjQ9gUxIBKpt2HI" class="code_box"><pre><code class="language-avrasm hljs "><span class="hljs-preprocessor">.data</span>
+      XXX         dd    <span class="hljs-number">100</span>
+      YYY         dd    <span class="hljs-number">100</span>
+      palinmax    dd    <span class="hljs-number">0</span>
+      txtbuf      db    <span class="hljs-number">16</span> dup(<span class="hljs-number">0</span>)
+
+<span class="hljs-preprocessor">.code</span>
+
+<span class="hljs-label">start:</span>
+      <span class="hljs-keyword">mov</span>   eax,XXX
+      <span class="hljs-keyword">mul</span>   YYY
+      <span class="hljs-keyword">mov</span>   ebx,eax
+      lea   edi,txtbuf
+      <span class="hljs-keyword">mov</span>   esi,edi   <span class="hljs-comment">;esi=points to first digit</span>
+      <span class="hljs-keyword">call</span>  dw2a
+      <span class="hljs-keyword">sub</span>   edi,<span class="hljs-number">2</span>     <span class="hljs-comment">;edi=back pointing to last digit</span>
+
+<span class="hljs-comment">;this works the same for either 5 or 6 digits</span>
+      lodsb
+      cmp   al,[edi]
+      jnz   nextone
+      <span class="hljs-keyword">dec</span>   edi
+      lodsb
+      cmp   al,[edi]
+      jnz   nextone
+      <span class="hljs-keyword">dec</span>   edi
+      lodsb
+      cmp   al,[edi]
+      jnz   nextone
+      cmp   ebx,palinmax
+      jb    nextone
+      <span class="hljs-keyword">mov</span>   palinmax,ebx
+
+<span class="hljs-label">nextone:</span>
+      <span class="hljs-keyword">inc</span>   YYY
+      cmp   YYY,<span class="hljs-number">1000</span>
+      jb    start
+      <span class="hljs-keyword">inc</span>   XXX
+      cmp   XXX,<span class="hljs-number">999</span>
+      ja    endcalc
+      <span class="hljs-keyword">push</span>  XXX
+      <span class="hljs-keyword">pop</span>   YYY      <span class="hljs-comment">;values less than XXX already checked</span>
+      <span class="hljs-keyword">jmp</span>   start      
+
+<span class="hljs-label">dw2a:</span>
+      <span class="hljs-keyword">mov</span>   ecx,<span class="hljs-number">10</span>
+      pushd <span class="hljs-number">0</span>           <span class="hljs-comment">;for later use as terminating 0</span>
+   @@:
+      xor   edx,edx     <span class="hljs-comment">;clear for division</span>
+      div   ecx
+      <span class="hljs-keyword">add</span>   dl,<span class="hljs-string">"0"</span>      <span class="hljs-comment">;convert to ascii</span>
+      <span class="hljs-keyword">push</span>  edx         <span class="hljs-comment">;save each digit on stack</span>
+      <span class="hljs-preprocessor">.if</span>   eax != <span class="hljs-number">0</span>
+            <span class="hljs-keyword">jmp</span>   @B    <span class="hljs-comment">;continue conversion</span>
+      <span class="hljs-preprocessor">.endif</span>
+   @@:
+      <span class="hljs-keyword">pop</span>   eax         <span class="hljs-comment">;retrieve each ascii character</span>
+      stosb
+      <span class="hljs-keyword">or</span>    al,al
+      jnz   @B          <span class="hljs-comment">;continue until terminating 0</span>
+      <span class="hljs-keyword">ret</span>
+<span class="hljs-label">endcalc:</span>
+</code></pre></div></div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="2561">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Thu, 5 Jan 2006, 10:18</div><span style="font-weight:bold;">paulj</span><br>Python&nbsp; <br><img src="./Thread 4 - Project Euler_files/USA.gif" title="USA" alt="USA" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=2561"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=2561-e31c79dc9334674e06cec7646b67019085fe95c5">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=2561-e31c79dc9334674e06cec7646b67019085fe95c5">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=2561-e31c79dc9334674e06cec7646b67019085fe95c5"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 7</a></div></td></tr><tr><td><div class="forum_message">Python:
+
+maxp = 0
+for i in xrange(100,1000):
+   for j in xrange(i, 1000):
+      p = i * j
+      if str(p) == str(p)[::-1] and p &gt; maxp:
+          maxp = p
+
+print maxp
+
+range for i was chosen to be 'all 3-digit numbers'.  range for j is such that we don't end up with duplicates.
+</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="2042">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Sun, 16 Oct 2005, 16:36</div><span style="font-weight:bold;">elt</span><br>Haskell&nbsp; <br><img src="./Thread 4 - Project Euler_files/Sweden.gif" title="Sweden" alt="Sweden" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=2042"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=2042-5048517ad3561ed84e77e95d506e8ea20fdb8247">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=2042-5048517ad3561ed84e77e95d506e8ea20fdb8247">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=2042-5048517ad3561ed84e77e95d506e8ea20fdb8247"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 7</a></div></td></tr><tr><td><div class="forum_message">Haskell solution
+
+palindrome = maximum (filter (isPalindrome) [a*b | a &lt;- [100..999], b &lt;- [a..999]])
+	where
+		isPalindrome a = a == merge (makeList a)
+			where
+				merge [] = 0
+				merge (x:xs) = x + merge (map (\x -&gt; x*10) xs)
+				makeList 0 = []
+				makeList a = (makeList (div a 10)) ++ [(mod a 10)]</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="1903">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Sun, 18 Sep 2005, 14:57</div><span style="font-weight:bold;">spuno</span><br>C#&nbsp; <br><img src="./Thread 4 - Project Euler_files/Sweden.gif" title="Sweden" alt="Sweden" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=1903"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=1903-76b23d6bb4f383a25f12ac07eb407d038d6785a8">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=1903-76b23d6bb4f383a25f12ac07eb407d038d6785a8">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=1903-76b23d6bb4f383a25f12ac07eb407d038d6785a8"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 7</a></div></td></tr><tr><td><div class="forum_message">C# solution
+
+int sum;
+int Largest = -1;
+string res;
+bool Palindrome = true;
+
+for(int x=999;x&gt;=1;x--)
+{
+	for(int y=999;y&gt;=1;y--)
+	{
+		sum = x*y;
+		res = sum.ToString();
+		Palindrome = true;
+		for(int t = 0;t&lt;res.Length / 2;t++)
+		{
+			if(res[t] != res[res.Length-t-1]) Palindrome = false;
+		}
+		if(Palindrome) if(sum &gt; Largest) Largest = sum;
+	}
+}
+Console.WriteLine(Largest);
+Console.ReadLine();</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="966">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Mon, 26 Dec 2005, 19:07</div><span style="font-weight:bold;">VrAbi</span><br>APL/J/K&nbsp; <br><img src="./Thread 4 - Project Euler_files/Hungary.gif" title="Hungary" alt="Hungary" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=966"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=966-97a9d038f9b0786ca79fac524263c5e2d5d63bbc">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=966-97a9d038f9b0786ca79fac524263c5e2d5d63bbc">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=966-97a9d038f9b0786ca79fac524263c5e2d5d63bbc"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 7</a></div></td></tr><tr><td><div class="forum_message">In K(kx.com):
+<div class="code_click" onclick="javascript:toggle(&#39;ATB9LQ9hI5AoR23I&#39;)"><table><tbody><tr><td><div style="text-align:left;"><span style="color:#633;cursor:help;" title="APL/J/K is not currently supported by syntax highlighter"></span></div></td><td><div id="click_ATB9LQ9hI5AoR23I">Show Code</div></td></tr></tbody></table></div><div id="content_ATB9LQ9hI5AoR23I" class="code_box"><pre><code class=" hljs mathematica">|/m@&amp;<span class="hljs-list">{x~|x}</span><span class="hljs-string">'10_vs'</span>m:*/<span class="hljs-string">',/n,/:\:n:100+!900</span></code></pre></div>
+Refactored, to match olegyk's J solution
+<div class="code_click" onclick="javascript:toggle(&#39;2Y4TMr0iFNhZPQDq&#39;)"><table><tbody><tr><td><div style="text-align:left;"><span style="color:#633;cursor:help;" title="APL/J/K is not currently supported by syntax highlighter"></span></div></td><td><div id="click_2Y4TMr0iFNhZPQDq">Show Code</div></td></tr></tbody></table></div><div id="content_2Y4TMr0iFNhZPQDq" class="code_box"><pre><code class=" hljs ruby">|<span class="hljs-regexp">/m@&amp;{x~|x}'$m:,/n</span>*<span class="hljs-regexp">/:\:n:!1000</span></code></pre></div>
+</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="2051">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Mon, 17 Oct 2005, 00:34</div><span style="font-weight:bold;">Silverfish</span><br>Python&nbsp; <br><img src="./Thread 4 - Project Euler_files/England.gif" title="England" alt="England" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=2051"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=2051-8bcd0da7632ec365899e0f7e2f3e33cbed0da931">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=2051-8bcd0da7632ec365899e0f7e2f3e33cbed0da931">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=2051-8bcd0da7632ec365899e0f7e2f3e33cbed0da931"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 6</a></div></td></tr><tr><td><div class="forum_message">My method is sort of brute force. 
+
+I started by creating a procedure (this is all in Maple), called palintest, that tests whether a given 6 digit number is palindrome:
+
+<div class="code_click" onclick="javascript:toggle(&#39;8qE5MrmFp3PE0Ndh&#39;)"><table><tbody><tr><td><div style="text-align:left;">Python</div></td><td><div id="click_8qE5MrmFp3PE0Ndh">Show Code</div></td></tr></tbody></table></div><div id="content_8qE5MrmFp3PE0Ndh" class="code_box"><pre><code class="language-python hljs ">
+palintest := proc(r) local a,b,c,tests;
+b := []; c:= r;
+<span class="hljs-keyword">for</span> a <span class="hljs-keyword">from</span> <span class="hljs-number">1</span> to <span class="hljs-number">6</span> do
+b := [op(b),c mod <span class="hljs-number">10</span>]; c := floor(c/<span class="hljs-number">10</span>);
+end do;
+<span class="hljs-keyword">for</span> a <span class="hljs-keyword">from</span> <span class="hljs-number">1</span> to <span class="hljs-number">3</span> do <span class="hljs-keyword">if</span> b[a] &lt;&gt; b[<span class="hljs-number">7</span>-a] then <span class="hljs-keyword">return</span> (false); end <span class="hljs-keyword">if</span>; end do;
+<span class="hljs-keyword">return</span>(true);             
+end proc;
+</code></pre></div>
+
+Then, I set up a program to run through all reasonable pairs of 3 digit numbers, multiply them, and check if the product is a palindrome:
+
+<div class="code_click" onclick="javascript:toggle(&#39;aGqg77H8JQKthYir&#39;)"><table><tbody><tr><td><div style="text-align:left;">Python</div></td><td><div id="click_aGqg77H8JQKthYir">Show Code</div></td></tr></tbody></table></div><div id="content_aGqg77H8JQKthYir" class="code_box"><pre><code class="language-python hljs ">
+palinfind := proc() local a,b, x,y; x := [];
+<span class="hljs-keyword">for</span> a <span class="hljs-keyword">from</span> <span class="hljs-number">999</span> to <span class="hljs-number">101</span> by -<span class="hljs-number">1</span> do print(a);
+<span class="hljs-keyword">for</span> b <span class="hljs-keyword">from</span> min(floor(<span class="hljs-number">999999</span>/a),<span class="hljs-number">999</span>) to
+max(ceil(<span class="hljs-number">100001</span>/a),<span class="hljs-number">101</span>) by -<span class="hljs-number">1</span> do 
+<span class="hljs-keyword">if</span> palintest(a*b) then x := {a,b}; <span class="hljs-keyword">return</span>(x); end <span class="hljs-keyword">if</span>; 
+end do; end do;
+<span class="hljs-keyword">return</span>(x); 
+end proc;    
+</code></pre></div>
+
+By reasonable, I mean that the numbers must be 3 digit, so between 100 and 999, not including 100, as a number with 100 as a factor would end in 0, and so if it was a palindrome it would start with 0, which is impossible.  Also, the product must be 6 digit, so between 100001 and 999999, the lowest and highest 6 digit palindromes.
+
+This produces 583*995 = 580085.  Given I started with the high numbers first, any higher palindromes would have one number less than 995 (as those higher have been covered, and those not covered for 995 would be those with the other number less than 583), and also both numbers must be at least 583, as if one is less, then the other would need to be greater than 995 (which is impossible).  So we can alter the program a bit to find another palindrome, with this program:
+
+<div class="code_click" onclick="javascript:toggle(&#39;UchGr53TcszEreIK&#39;)"><table><tbody><tr><td><div style="text-align:left;">Python</div></td><td><div id="click_UchGr53TcszEreIK">Show Code</div></td></tr></tbody></table></div><div id="content_UchGr53TcszEreIK" class="code_box"><pre><code class="language-python hljs ">
+palinfind2 := proc() local a,b, x,y; x := [];
+<span class="hljs-keyword">for</span> a <span class="hljs-keyword">from</span> <span class="hljs-number">999</span> to <span class="hljs-number">583</span> by -<span class="hljs-number">1</span> do print(a);
+<span class="hljs-keyword">for</span> b <span class="hljs-keyword">from</span> min(floor(<span class="hljs-number">999999</span>/a),<span class="hljs-number">999</span>) to
+max(ceil(<span class="hljs-number">580086</span>/a),<span class="hljs-number">583</span>) by -<span class="hljs-number">1</span> do
+<span class="hljs-keyword">if</span> palintest(a*b) then x := {a,b}; <span class="hljs-keyword">return</span>(x); end <span class="hljs-keyword">if</span>; 
+end do; end do;
+<span class="hljs-keyword">return</span>(x);
+end proc;
+</code></pre></div>
+
+This gives 913*993 = 906609, and by a similar process we can look for any higher palindromes, which do not exist.</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="4380">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;cursor:help;" title="Edited Mon, 24 Jul 2006, 16:13">Mon, 24 Jul 2006, 16:12</div><span style="font-weight:bold;">thattommyhall</span><br>Clojure&nbsp; <br><img src="./Thread 4 - Project Euler_files/England.gif" title="England" alt="England" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=4380"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=4380-91d060531c2f9530f70c812a53d69eb60df48f2f">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=4380-91d060531c2f9530f70c812a53d69eb60df48f2f">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=4380-91d060531c2f9530f70c812a53d69eb60df48f2f"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 6</a></div></td></tr><tr><td><div class="forum_message"><b>paulj</b> said
+<div class="forum_quote">Python:
+
+maxp = 0
+for i in xrange(100,1000):
+   for j in xrange(i, 1000):
+      p = i * j
+      if str(p) == str(p)[::-1] and p &gt; maxp:
+          maxp = p
+
+print maxp
+
+
+range for i was chosen to be 'all 3-digit numbers'.  range for j is such that we don't end up with duplicates.
+</div>
+
+Like mine, just a shade more thoughtfull, beautiful.</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="2655">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;cursor:help;" title="Edited Tue, 17 Jan 2006, 19:34">Tue, 17 Jan 2006, 19:32</div><span style="font-weight:bold;">gauchopuro</span><br>Haskell&nbsp; <br><img src="./Thread 4 - Project Euler_files/USA.gif" title="USA" alt="USA" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=2655"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=2655-ad23ac64234b3e1b9bf8d07acb96e9e51d48afc8">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=2655-ad23ac64234b3e1b9bf8d07acb96e9e51d48afc8">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=2655-ad23ac64234b3e1b9bf8d07acb96e9e51d48afc8"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 6</a></div></td></tr><tr><td><div class="forum_message">Another Haskell solution, with GHCi:
+
+&gt; let palindrome x = let digits = show x in 
+                       digits == reverse digits
+&gt; maximum [x * y | x &lt;- [100..999], y &lt;- [100..999],           
+                   palindrome (x * y)]
+906609
+</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="5683">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Sun, 14 Jan 2007, 07:16</div><span style="font-weight:bold;">Mr.Wizard</span><br>Mathematica&nbsp; <br><img src="./Thread 4 - Project Euler_files/USA.gif" title="USA" alt="USA" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=5683"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=5683-70322b06e5d930925228022369259075b12b03c7">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=5683-70322b06e5d930925228022369259075b12b03c7">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=5683-70322b06e5d930925228022369259075b12b03c7"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 5</a></div></td></tr><tr><td><div class="forum_message">A solution with Mathematica:
+
+pQ=Boole[#==Reverse@#]&amp;@IntegerDigits@#&amp;
+
+Array[pQ[1##]##&amp;,{100,100},900,Max]</div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br><a class="anchor" id="1096">&nbsp;</a><a name="last">&nbsp;</a><table class="forum_table"><tbody><tr><td rowspan="2" class="forum_info"><div style="font-size:85%;">Fri, 18 Mar 2005, 22:00</div><span style="font-weight:bold;">HvT</span><br>C/C++&nbsp; <br><img src="./Thread 4 - Project Euler_files/Netherlands.gif" title="Netherlands" alt="Netherlands" style="border:1px solid #bbb;vertical-align:middle;"></td><td><div class="action_buttons"><a title="Direct link to this post" href="https://projecteuler.net/thread=4;post=1096"><img src="./Thread 4 - Project Euler_files/icon_forum_link.png" style="vertical-align:middle;"></a>&nbsp; &nbsp;<a href="https://projecteuler.net/quote_post=1096-e2300b7b1b0795fff9a09cfc6489890de4234ff3">Quote</a>&nbsp; &nbsp;<a href="https://projecteuler.net/report_post=1096-e2300b7b1b0795fff9a09cfc6489890de4234ff3">Report</a>&nbsp; &nbsp;<a title="Give Kudos" href="https://projecteuler.net/kudos_post=1096-e2300b7b1b0795fff9a09cfc6489890de4234ff3"><img src="./Thread 4 - Project Euler_files/icon_thumb_up.png"> 5</a></div></td></tr><tr><td><div class="forum_message">Perl:
+
+<div class="code_click" onclick="javascript:toggle(&#39;nRJnm1xqKmnjAKxj&#39;)"><table><tbody><tr><td><div style="text-align:left;">C/C++</div></td><td><div id="click_nRJnm1xqKmnjAKxj">Show Code</div></td></tr></tbody></table></div><div id="content_nRJnm1xqKmnjAKxj" class="code_box"><pre><code class="language-cpp hljs ">
+<span class="hljs-preprocessor">#!usr/bin/perl -w</span>
+
+<span class="hljs-keyword">for</span> $multiply1(<span class="hljs-number">100.</span><span class="hljs-number">.999</span>)
+{
+    <span class="hljs-keyword">for</span> $multiply2(<span class="hljs-number">100.</span><span class="hljs-number">.999</span>)
+    {
+        $Solution=$multiply1*$multiply2;
+        $ReversedSolution=reverse $Solution;
+        
+        <span class="hljs-keyword">if</span>($ReversedSolution==$Solution)
+        {
+            print <span class="hljs-string">"$Solution\n"</span>;
+        }
+     }
+}
+</code></pre></div></div><div style="text-align:right;"><img src="./Thread 4 - Project Euler_files/icon_archived.png" title="Permanent post"></div></td></tr></tbody></table><br></div>
+
+<div id="footer" class="noprint">
+Project Euler: <a href="https://projecteuler.net/copyright">Copyright Information</a> | <a href="https://projecteuler.net/privacy">Privacy Policy</a>
+<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+   <Work rdf:about="">
+      <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/" />
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   </Work>
+   <License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/><requires rdf:resource="http://web.resource.org/cc/ShareAlike"/></License></rdf:RDF> -->
+</div>
+</div>
+
+
+</div><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, sans-serif;"></div></div></body></html>
