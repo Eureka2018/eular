@@ -1,0 +1,842 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)http://mathworld.wolfram.com/PrimeNumberTheorem.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Prime Number Theorem -- from Wolfram MathWorld</title>
+
+<meta name="DC.Title" content="Prime Number Theorem">
+<meta name="DC.Creator" content="Weisstein, Eric W.">
+<meta name="DC.Description" content="The prime number theorem gives an asymptotic form for the prime counting function pi(n), which counts the number of primes less than some integer n. Legendre (1808) suggested that for large n,  pi(n)∼n/(lnn+B),  (1)   with B=-1.08366 (where B is sometimes called Legendre&#39;s constant), a formula which is correct in the leading term only,  n/(lnn+B)sinn/(lnn)-Bn/((lnn)^2)+B^2n/((lnn)^3)+...  (2)   (Nagell 1951, p. 54; Wagon 1991, pp. 28-29; Havil 2003, p. 177). In 1792, when only 15 years...">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2003-04-24">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2003-04-28">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2004-02-08">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2004-02-09">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2004-06-26">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2005-11-07">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Number Theory:Prime Numbers:Prime Number Theorem">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Number Theory:Prime Numbers:Prime Counting Function">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Foundations of Mathematics:Mathematical Problems:Solved Problems">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Foundations of Mathematics:Mathematical Problems:Refuted Conjectures">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:MathWorld Contributors:Sondow">
+<meta name="DC.Subject" scheme="MSC_2000" content="11N05">
+<meta name="DC.Rights" content="Copyright 1999-2018 Wolfram Research, Inc.  See http://mathworld.wolfram.com/about/terms.html for a full terms of use statement.">
+<meta name="DC.Format" scheme="IMT" content="text/html">
+<meta name="DC.Identifier" scheme="URI" content="http://mathworld.wolfram.com/PrimeNumberTheorem.html">
+<meta name="DC.Language" scheme="RFC3066" content="en">
+<meta name="DC.Publisher" content="Wolfram Research, Inc.">
+<meta name="DC.Relation.IsPartOf" scheme="URI" content="http://mathworld.wolfram.com/">
+<meta name="DC.Type" scheme="DCMIType" content="Text">
+<meta name="Last-Modified" content="2005-11-07">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<link rel="alternate" type="application/rss+xml" title="MathWorld Headline News" href="http://mathworld.wolfram.com/news/rss.xml">
+<link rel="stylesheet" type="text/css" href="./Prime Number Theorem -- from Wolfram MathWorld_files/mathworldv2.css">
+<script async="" src="./Prime Number Theorem -- from Wolfram MathWorld_files/analytics.js.下载"></script><script language="JavaScript" type="text/javascript" src="./Prime Number Theorem -- from Wolfram MathWorld_files/menu.js.下载"></script>
+<script language="JavaScript" type="text/javascript" src="./Prime Number Theorem -- from Wolfram MathWorld_files/mathworld.js.下载"></script>
+<script language="JavaScript" type="text/javascript" src="./Prime Number Theorem -- from Wolfram MathWorld_files/downloadNotebook.js.下载"></script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-216407-21', 'mathworld.wolfram.com');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+<script type="text/javascript" src="./Prime Number Theorem -- from Wolfram MathWorld_files/eu-cookie.js.下载"></script><script src="./Prime Number Theorem -- from Wolfram MathWorld_files/cookietest.jsp" type="text/javascript"></script>
+<table summary="" id="headerTable" width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tbody><tr>
+			<td>
+				<div id="logo">
+<img src="./Prime Number Theorem -- from Wolfram MathWorld_files/logo.png" alt="" usemap="#mwlogomap">
+
+<map name="mwlogomap" id="mwlogomap">
+  <area shape="rect" coords="0,30,200,47" href="http://www.wolfram.com/mathematica/" alt="Built with Mathematica Technology" title="Built with Mathematica Technology">
+  <area shape="rect" coords="0,0,617,30" href="http://mathworld.wolfram.com/" alt="Wolfram MathWorld" title="Wolfram MathWorld">
+</map>
+</div>
+			</td>
+			<td>
+				<div id="searchWrapper">
+					<form name="NavBarSearch" action="http://mathworld.wolfram.com/search/" method="get" accept-charset="UTF-8" onsubmit=" if (checkForDefaultInput(&#39;query_1&#39;, &#39;Search MathWorld&#39;)) { return false; }">
+						<input id="search" class="searchboxsub" name="query" type="text" value="Search MathWorld" onfocus="initTextInput(this,&#39;clear&#39;,&#39;Search MathWorld&#39;)" onblur="initTextInput(this,&#39;setDefault&#39;,&#39;Search MathWorld&#39;)">
+						<input type="image" src="./Prime Number Theorem -- from Wolfram MathWorld_files/search-icon.png" id="search-icon" alt="Search" onclick="if (checkForDefaultInput(&#39;query_1&#39;, &#39;Search MathWorld&#39;)) { return false;} else {document.NavBarSearch.submit(); }">
+					</form>
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	
+<table summary="" id="pageTable" width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tbody><tr>
+			<td class="leftcolumn">
+			<!--Start nav content -->
+<!-- Sidebar -->
+
+				<div id="navigation">
+					<div><a href="http://mathworld.wolfram.com/topics/Algebra.html">Algebra</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/AppliedMathematics.html">Applied Mathematics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/CalculusandAnalysis.html">Calculus and Analysis</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/DiscreteMathematics.html">Discrete Mathematics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/FoundationsofMathematics.html">Foundations of Mathematics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/Geometry.html">Geometry</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/HistoryandTerminology.html">History and Terminology</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/NumberTheory.html">Number Theory</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/ProbabilityandStatistics.html">Probability and Statistics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/RecreationalMathematics.html">Recreational Mathematics</a></div>
+					<div><a href="http://mathworld.wolfram.com/topics/Topology.html">Topology</a></div>
+					<div class="subnav">
+						<div class="subnav-item">
+							<a href="http://mathworld.wolfram.com/letters/">Alphabetical Index</a><br>
+							<a href="http://mathworld.wolfram.com/topics/InteractiveEntries.html">Interactive Entries</a><br>
+							<a href="http://mathworld.wolfram.com/cgi-bin/random.cgi">Random Entry</a><br>
+							<a href="http://mathworld.wolfram.com/whatsnew/">New in <em>MathWorld</em></a>
+						</div>
+						<div class="subnav-item">
+							<a href="http://mathworld.wolfram.com/classroom/"><em>MathWorld</em> Classroom</a>
+						</div>			
+						<div class="subnav-item">
+							<a href="http://mathworld.wolfram.com/about/">About <em>MathWorld</em></a><br>
+							<a href="http://mathworld.wolfram.com/contact/contribute.html">Contribute to <em>MathWorld</em></a><br>
+							<a href="http://mathworld.wolfram.com/contact/">Send a Message to the Team</a>
+						</div>
+						<div class="subnav-item last">
+							<a href="http://www.amazon.com/exec/obidos/ASIN/1420072218/ref=nosim/weisstein-20" target="_blank"><em>MathWorld</em> Book</a>
+						</div>
+					</div>
+				</div>
+				<div id="credits">
+					<div class="links"><a href="http://www.wolfram.com/resources/" target="_blank" title="Wolfram Web Resources">Wolfram Web Resources&nbsp;»</a></div>
+					<div class="lastupdated">
+						<a href="http://mathworld.wolfram.com/whatsnew/">13,636 entries</a><br>
+						<a href="http://mathworld.wolfram.com/whatsnew/">Last updated: Wed Jan  3 2018</a>
+					</div>
+					<div class="author">Created, developed, and nurtured&nbsp;by&nbsp;<a href="http://mathworld.wolfram.com/about/author.html" class="authorlink" title="Created, developed, and nurtured by Eric Weisstein">Eric&nbsp;Weisstein</a> at <a href="http://www.wolfram.com/" target="_blank" class="companylink" title="Wolfram Research">Wolfram&nbsp;Research</a></div>
+				</div>
+
+<!-- End Sidebar -->
+
+				<!--End nav content -->
+			</td>
+			<td class="mainCell">
+				
+<div id="mainContent">
+<!-- Begin Body -->
+<!-- Begin Subject -->
+<div id="NS" class="NS_Co">
+<div class="linktrail">
+<a href="http://mathworld.wolfram.com/topics/NumberTheory.html">Number Theory</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/PrimeNumbers.html">Prime Numbers</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/PrimeNumberTheorem.html">Prime Number
+ Theorem</a>&nbsp;&gt;<br>
+</div>
+<div class="linktrail">
+<a href="http://mathworld.wolfram.com/topics/NumberTheory.html">Number Theory</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/PrimeNumbers.html">Prime Numbers</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/PrimeCountingFunction.html">Prime Counting
+ Function</a>&nbsp;&gt;<br>
+</div>
+<div class="linktrail">
+<a href="http://mathworld.wolfram.com/topics/FoundationsofMathematics.html">Foundations of Mathematics</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/MathematicalProblems.html">Mathematical Problems</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/SolvedProblems.html">Solved Problems</a>&nbsp;&gt;<br>
+</div>
+<div class="more">
+<a href="javascript:togglelinktrail(&#39;NS&#39;)"><span class="linktrail">More...</span></a>
+</div>
+<div id="NSG" class="NS">
+<div class="linktrail">
+<a href="http://mathworld.wolfram.com/topics/FoundationsofMathematics.html">Foundations of Mathematics</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/MathematicalProblems.html">Mathematical Problems</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/RefutedConjectures.html">Refuted Conjectures</a>&nbsp;&gt;<br>
+</div>
+<div class="linktrail">
+<a href="http://mathworld.wolfram.com/topics/MathWorldContributors.html">MathWorld Contributors</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/Sondow.html">Sondow</a>&nbsp;&gt;<br>
+</div>
+<div class="linktrail">
+<a href="http://mathworld.wolfram.com/topics/InteractiveEntries.html">Interactive Entries</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/InteractiveDemonstrations.html">Interactive Demonstrations</a>&nbsp;&gt;<br>
+</div>
+<a href="javascript:togglelinktrail(&#39;NS&#39;)"><span class="linktrail">Less...</span></a>
+</div>
+</div>
+<!-- End Subject -->
+<br>
+<!-- Begin Title -->
+<h1>Prime Number Theorem</h1>
+<!-- End Title -->
+<!-- Begin Total Content -->
+<a href="http://mathworld.wolfram.com/notebooks/PrimeNumbers/PrimeNumberTheorem.nb" onclick="downloadNotebook(&#39;http://mathworld.wolfram.com/notebooks/PrimeNumbers/PrimeNumberTheorem.nb&#39;);return false;"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/dnld-nb.png" width="119" height="26" border="0" alt="DOWNLOAD Mathematica Notebook"></a>
+<script type="text/javascript" language="JavaScript">function pop (url) {var win=window.open(url,'popup','width=525,height=690,resizable=no,scrollbars=yes,location=no,status=no,toolbar=no');win.window.focus();}</script><a href="http://mathworld.wolfram.com/classroom/PrimeNumberTheorem.html" onclick="javascript:pop(&#39;/classroom/PrimeNumberTheorem.html&#39;);return false"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/mw-class.gif" width="133" height="26" border="0" alt="EXPLORE THIS TOPIC IN the MathWorld Classroom"></a>
+<a href="http://mathworld.wolfram.com/contribute/incomplete_entry.html#PrimeNumberTheorem"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/contribute2.gif" align="bottom" border="0" width="91" height="26" alt="Contribute to this entry"></a>
+<!-- Begin Content -->
+<img width="366" height="226" src="./Prime Number Theorem -- from Wolfram MathWorld_files/PrimePi_1001.gif" class="center-image" alt="PrimePi">
+<p>
+The prime number theorem gives an asymptotic form for the <a href="http://mathworld.wolfram.com/PrimeCountingFunction.html">prime counting function</a> <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline1.gif" class="inlineformula" width="25" height="14" border="0" alt="pi(n)">, which counts
+ the number of <a href="http://mathworld.wolfram.com/PrimeNumber.html">primes</a> less than some <a href="http://mathworld.wolfram.com/Integer.html">integer</a> <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline2.gif" class="inlineformula" width="7" height="14" border="0" alt="n">. Legendre (1808) suggested that for large <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline3.gif" class="inlineformula" width="7" height="14" border="0" alt="n">,
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation1.gif" class="numberedequation" width="94" height="32" border="0" alt=" pi(n)∼n/(lnn+B), "></td><td align="right" width="3">
+<div id="eqn1" class="eqnum">
+(1)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+with <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline4.gif" class="inlineformula" width="82" height="14" border="0" alt="B=-1.08366"> (where <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline5.gif" class="inlineformula" width="9" height="14" border="0" alt="B"> is sometimes called
+ <a href="http://mathworld.wolfram.com/LegendresConstant.html">Legendre's constant</a>), a formula which is correct
+ in the leading term only,
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation2.gif" class="numberedequation" width="264" height="37" border="0" alt=" n/(lnn+B)sinn/(lnn)-Bn/((lnn)^2)+B^2n/((lnn)^3)+... "></td><td align="right" width="3">
+<div id="eqn2" class="eqnum">
+(2)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+(Nagell 1951, p.&nbsp;54; Wagon 1991, pp.&nbsp;28-29; Havil 2003, p.&nbsp;177).
+</p>
+<p>
+In 1792, when only 15 years old, Gauss proposed that
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation3.gif" class="numberedequation" width="70" height="32" border="0" alt=" pi(n)∼n/(lnn). "></td><td align="right" width="3">
+<div id="eqn3" class="eqnum">
+(3)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+Gauss later refined his estimate to
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation4.gif" class="numberedequation" width="74" height="14" border="0" alt=" pi(n)∼Li(n), "></td><td align="right" width="3">
+<div id="eqn4" class="eqnum">
+(4)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+where
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation5.gif" class="numberedequation" width="93" height="37" border="0" alt=" Li(n)=int_2^n(dx)/(lnx) "></td><td align="right" width="3">
+<div id="eqn5" class="eqnum">
+(5)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+is the <a href="http://mathworld.wolfram.com/LogarithmicIntegral.html">logarithmic integral</a>. Gauss did not publish this result, which he first mentioned in an 1849 letter to Encke. It was
+ subsequently posthumously published in 1863 (Gauss 1863; Havil 2003, pp.&nbsp;174-176).
+</p>
+<p>
+Note that <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline6.gif" class="inlineformula" width="30" height="14" border="0" alt="Li(n)"> has the <a href="http://mathworld.wolfram.com/AsymptoticSeries.html">asymptotic
+ series</a> about <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline7.gif" class="inlineformula" width="12" height="14" border="0" alt="infty"> of
+</p>
+<table summary="" align="center" width="100%" cellpadding="0" cellspacing="0" style="padding-left: 50px" border="0">
+<tbody><tr style="Text"><td align="right" width="1"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline8.gif" class="displayformula" width="30" height="14" border="0" alt="Li(n)"></td><td align="center" width="14"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline9.gif" class="displayformula" width="9" height="14" border="0" alt="∼"></td><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline10.gif" class="displayformula" width="71" height="44" border="0" alt="sum_(k=0)^(infty)(k!n)/((lnn)^(k+1))"></td><td align="right" width="10">
+<div id="eqn6" class="eqnum">
+(6)
+</div>
+</td></tr><tr style="Text"><td align="right" width="1"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline11.gif" class="displayformula" width="12" height="14" border="0" alt=""></td><td align="center" width="14"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline12.gif" class="displayformula" width="9" height="14" border="0" alt="∼"></td><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline13.gif" class="displayformula" width="167" height="40" border="0" alt="n/(lnn)+n/((lnn)^2)+(2n)/((lnn)^3)+...,"></td><td align="right" width="10">
+<div id="eqn7" class="eqnum">
+(7)
+</div>
+</td></tr>
+</tbody></table>
+<p>
+and taking the first three terms has been shown to be a better estimate than <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline14.gif" class="inlineformula" width="36" height="14" border="0" alt="n/lnn"> alone (Derbyshire 2004, pp.&nbsp;116-117).
+</p>
+<p>
+The statement (<a href="http://mathworld.wolfram.com/PrimeNumberTheorem.html#eqn4">4</a>) is often known as "the" prime number theorem and was proved independently by Hadamard (1896) and de la Vallée Poussin
+ (1896). A plot of <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline15.gif" class="inlineformula" width="25" height="14" border="0" alt="pi(n)"> (lower curve) and <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline16.gif" class="inlineformula" width="30" height="14" border="0" alt="Li(n)"> is shown above
+ for <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline17.gif" class="inlineformula" width="50" height="14" border="0" alt="n&lt;=1000">.
+</p>
+<p>
+For small <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline18.gif" class="inlineformula" width="7" height="14" border="0" alt="n">, it had been checked and always found
+ that <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline19.gif" class="inlineformula" width="70" height="14" border="0" alt="pi(n)&lt;Li(n)">. As a result, many prominent
+ mathematicians, including no less than both Gauss and Riemann, conjectured that the
+ inequality was strict. To everyone's surprise, this conjecture was refuted when Littlewood
+ (1914) proved that the <a href="http://mathworld.wolfram.com/Inequality.html">inequality</a> reverses infinitely
+ often for sufficiently large <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline20.gif" class="inlineformula" width="7" height="14" border="0" alt="n"> (Ball and Coxeter
+ 1987; Havil 2003, p.&nbsp;199). Skewes then showed that the first crossing of <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline21.gif" class="inlineformula" width="94" height="14" border="0" alt="pi(n)-Li(n)=0"> occurs before <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline22.gif" class="inlineformula" width="45" height="24" border="0" alt="10^(10^(10^(34)))">,
+ a number now known as the <a href="http://mathworld.wolfram.com/SkewesNumber.html">Skewes number</a> (Havil 2003,
+ p.&nbsp;199). The upper bound for the crossing has subsequently been reduced to <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline23.gif" class="inlineformula" width="30" height="17" border="0" alt="10^(371)">. Lehman (1966) proved that at least <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline24.gif" class="inlineformula" width="30" height="17" border="0" alt="10^(500)"> reversals occur for numbers with 1166 or
+ 1167 <a href="http://mathworld.wolfram.com/Decimal.html">decimal</a> <a href="http://mathworld.wolfram.com/Digit.html">digits</a>.
+</p>
+<p>
+Chebyshev put limits on the <a href="http://mathworld.wolfram.com/Ratio.html">ratio</a>
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation6.gif" class="numberedequation" width="82" height="42" border="0" alt=" 7/8&lt;(pi(n))/(n/(lnn))&lt;9/8 "></td><td align="right" width="3">
+<div id="eqn8" class="eqnum">
+(8)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+(Landau 1927; Nagell 1951, p.&nbsp;55; Landau 1974; Hardy and Wright 1979, Ch.&nbsp;22; Ingham 1990; Rubinstein and Sarnak 1994; Hardy 1999, p.&nbsp;27; Derbyshire 2004,
+ pp.&nbsp;124 and 154). For large <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline25.gif" class="inlineformula" width="7" height="14" border="0" alt="n">, he showed that
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation7.gif" class="numberedequation" width="175" height="14" border="0" alt=" 0.89Li(n)&lt;pi(n)&lt;1.11Li(n), "></td><td align="right" width="3">
+<div id="eqn9" class="eqnum">
+(9)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+where <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline26.gif" class="inlineformula" width="30" height="14" border="0" alt="Li(x)"> is the <a href="http://mathworld.wolfram.com/LogarithmicIntegral.html">logarithmic
+ integral</a> (Edwards 2001, p.&nbsp;4), and
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation8.gif" class="numberedequation" width="124" height="42" border="0" alt=" 0.922&lt;(pi(n))/(n/(lnn))&lt;1.105 "></td><td align="right" width="3">
+<div id="eqn10" class="eqnum">
+(10)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+(Havil 2003, p.&nbsp;186). He also showed that if the <a href="http://mathworld.wolfram.com/Limit.html">limit</a>
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation9.gif" class="numberedequation" width="53" height="42" border="0" alt=" lim_(n-&gt;infty)(pi(n))/(n/(lnn)) "></td><td align="right" width="3">
+<div id="eqn11" class="eqnum">
+(11)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+exists, then it is 1 (Havil 2003, p.&nbsp;186). Derbyshire's (2004, p.&nbsp;124) statement that in 1850, Chebyshev also showed that <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline27.gif" class="inlineformula" width="25" height="14" border="0" alt="pi(n)"> cannot differ
+ from <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline28.gif" class="inlineformula" width="36" height="14" border="0" alt="n/lnn"> by more than approximately 10% is
+ therefore correct only for sufficiently large <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline29.gif" class="inlineformula" width="7" height="14" border="0" alt="n">.
+</p>
+<p>
+Hadamard and de la Vallée Poussin independently proved the prime number theorem in 1896 by showing that the <a href="http://mathworld.wolfram.com/RiemannZetaFunction.html">Riemann zeta function</a> <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline30.gif" class="inlineformula" width="24" height="14" border="0" alt="zeta(z)"> has no zeros <a href="http://mathworld.wolfram.com/OftheForm.html">of
+ the form</a> <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline31.gif" class="inlineformula" width="33" height="14" border="0" alt="1+it">, in the sense that no deeper properties
+ of <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline32.gif" class="inlineformula" width="23" height="14" border="0" alt="zeta(s)"> are required for the proof (Smith
+ 1994, p.&nbsp;128; Hardy 1999, pp.&nbsp;58-60). Wiener (1951) allowed this somewhat
+ vague statement to be interpreted literally (Hardy 1999, pp.&nbsp;34 and 46), and
+ this proof was simplified by Landau (1932) and Bochner (1933).
+</p>
+<p>
+An <a href="http://mathworld.wolfram.com/ElementaryProof.html">elementary proof</a> was found by Erdős (1949) and Selberg (1950) (Ball and Coxeter 1987, p.&nbsp;63; Havil 2003, p.&nbsp;188),
+ although an unfortunate priority dispute over the joint work marred the otherwise
+ beautiful proof (Hoffman 1998, pp.&nbsp;39-41; Derbyshire 2004, p.&nbsp;125). Versions
+ of elementary proofs of the prime number theorem appear in final section of Nagell
+ (1951) and in Hardy and Wright (1979, pp.&nbsp;359-367). As noted by Hardy and Wright
+ (1979, p.&nbsp;9), although this proof is 'elementary,' "this proof is not easy."
+</p>
+<p>
+Hadamard's proof depends on the simple trigonometric inequality
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation10.gif" class="numberedequation" width="234" height="17" border="0" alt=" 3+4costheta+cos(2theta)=2(1+costheta)^2&gt;=0 "></td><td align="right" width="3">
+<div id="eqn12" class="eqnum">
+(12)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+(Hardy 1999, p.&nbsp;58; Havil 2003, p.&nbsp;187). de la Vallée Poussin (1899) showed that
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation11.gif" class="numberedequation" width="186" height="32" border="0" alt=" pi(x)=Li(x)+O(x/(lnx)e^(-asqrt(lnx))) "></td><td align="right" width="3">
+<div id="eqn13" class="eqnum">
+(13)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+for some constant <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline33.gif" class="inlineformula" width="7" height="14" border="0" alt="a"> (Knuth 1998, p.&nbsp;381), where <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline34.gif" class="inlineformula" width="28" height="14" border="0" alt="O(x)"> is <a href="http://mathworld.wolfram.com/AsymptoticNotation.html">asymptotic
+ notation</a>. In 1901, Koch showed that if the <a href="http://mathworld.wolfram.com/RiemannHypothesis.html">Riemann
+ hypothesis</a> is true, then
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation12.gif" class="numberedequation" width="155" height="23" border="0" alt=" pi(x)=Li(x)+O(sqrt(x)lnx) "></td><td align="right" width="3">
+<div id="eqn14" class="eqnum">
+(14)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+(Havil 2003, p.&nbsp;205), which can be written in the slightly weaker form
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation13.gif" class="numberedequation" width="139" height="21" border="0" alt=" pi(x)=Li(x)+O(x^(1/2+epsilon)) "></td><td align="right" width="3">
+<div id="eqn15" class="eqnum">
+(15)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+(Derbyshire 2004, pp.&nbsp;237 and 242-244).
+</p>
+<p>
+The error term in (<a href="http://mathworld.wolfram.com/PrimeNumberTheorem.html#eqn15">15</a>) has subsequently been improved to
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation14.gif" class="numberedequation" width="229" height="42" border="0" alt=" pi(x)=Li(x)+O(xexp(-(A(lnx)^(3/5))/((lnlnx)^(1/5)))) "></td><td align="right" width="3">
+<div id="eqn16" class="eqnum">
+(16)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+(Walfisz 1963; Riesel 1994, p.&nbsp;56; Knuth 1998, p.&nbsp;382; Derbyshire 2004, p.&nbsp;244). Ingham (1930) proved the prime number theorem using the identity of Ramanujan
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation15.gif" class="numberedequation" width="310" height="44" border="0" alt=" sum_(n=1)^infty(sigma_a(n)sigma_b(n))/(n^s)=(zeta(s)zeta(s-a)zeta(s-b)zeta(s-a-b))/(zeta(2s-a-b)), "></td><td align="right" width="3">
+<div id="eqn17" class="eqnum">
+(17)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+where <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline35.gif" class="inlineformula" width="34" height="14" border="0" alt="sigma_a(n)"> is the <a href="http://mathworld.wolfram.com/DivisorFunction.html">divisor
+ function</a> (Hardy 1999, pp.&nbsp;59-60).
+</p>
+<p>
+Riemann estimated the <a href="http://mathworld.wolfram.com/PrimeCountingFunction.html">prime counting function</a>
+with
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation16.gif" class="numberedequation" width="146" height="23" border="0" alt=" pi(n)∼Li(n)-1/2Li(n^(1/2)), "></td><td align="right" width="3">
+<div id="eqn18" class="eqnum">
+(18)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+which is a better approximation than <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline36.gif" class="inlineformula" width="30" height="14" border="0" alt="Li(n)"> for <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline37.gif" class="inlineformula" width="42" height="17" border="0" alt="n&lt;10^7">. Riemann
+ (1859) also suggested the <a href="http://mathworld.wolfram.com/RiemannFunction.html">Riemann function</a>
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation17.gif" class="numberedequation" width="146" height="44" border="0" alt=" R(x)=sum_(n=1)^infty(mu(n))/nLi(x^(1/n)), "></td><td align="right" width="3">
+<div id="eqn19" class="eqnum">
+(19)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+where <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline38.gif" class="inlineformula" width="8" height="14" border="0" alt="mu"> is the <a href="http://mathworld.wolfram.com/MoebiusFunction.html">Möbius
+ function</a> (Wagon 1991, p.&nbsp;29). An even better approximation for small <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline39.gif" class="inlineformula" width="7" height="14" border="0" alt="n"> (by a factor of 10 for <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline40.gif" class="inlineformula" width="42" height="17" border="0" alt="n&lt;10^9">) is the
+ <a href="http://mathworld.wolfram.com/GramSeries.html">Gram series</a>.
+</p>
+<p>
+The prime number theorem is equivalent to either
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation18.gif" class="numberedequation" width="76" height="35" border="0" alt=" lim_(x-&gt;infty)(theta(x))/x=1 "></td><td align="right" width="3">
+<div id="eqn20" class="eqnum">
+(20)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+or
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation19.gif" class="numberedequation" width="83" height="35" border="0" alt=" lim_(x-&gt;infty)(psi(x))/x=1, "></td><td align="right" width="3">
+<div id="eqn21" class="eqnum">
+(21)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+where <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline41.gif" class="inlineformula" width="24" height="14" border="0" alt="theta(x)"> and <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline42.gif" class="inlineformula" width="27" height="14" border="0" alt="psi(x)"> are the <a href="http://mathworld.wolfram.com/ChebyshevFunctions.html">Chebyshev functions</a>. Chebyshev showed that the
+ only possible limit of these expressions was 1, but was not able to prove existence
+ of the limit (Hardy 1999, p.&nbsp;28).
+</p>
+<p>
+The <a href="http://mathworld.wolfram.com/RiemannHypothesis.html">Riemann hypothesis</a> is equivalent to the
+assertion that
+</p>
+<div>
+<table summary="" width="100%" align="center" cellspacing="0" cellpadding="0" style="padding-left: 50px">
+<tbody><tr><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/NumberedEquation20.gif" class="numberedequation" width="147" height="19" border="0" alt=" |Li(x)-pi(x)|&lt;=csqrt(x)lnx "></td><td align="right" width="3">
+<div id="eqn22" class="eqnum">
+(22)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p>
+for some value of <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline43.gif" class="inlineformula" width="6" height="14" border="0" alt="c"> (Ingham 1990, p.&nbsp;83; Landau 1974,
+ pp.&nbsp;378-388; Ball and Coxeter 1987; Hardy 1999, p.&nbsp;26), as shown by Koch
+ in 1901 (Havil 2003, p.&nbsp;205). Some limits obtained without assuming the <a href="http://mathworld.wolfram.com/RiemannHypothesis.html">Riemann
+ hypothesis</a> are
+</p>
+<table summary="" align="center" width="100%" cellpadding="0" cellspacing="0" style="padding-left: 50px" border="0">
+<tbody><tr style="Text"><td align="right" width="1"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline44.gif" class="displayformula" width="25" height="14" border="0" alt="pi(x)"></td><td align="center" width="14"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline45.gif" class="displayformula" width="9" height="14" border="0" alt="="></td><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline46.gif" class="displayformula" width="141" height="27" border="0" alt="Li(x)+O[xe^(-(lnx)^(1/2)/15)]"></td><td align="right" width="10">
+<div id="eqn23" class="eqnum">
+(23)
+</div>
+</td></tr><tr style="Text"><td align="right" width="1"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline47.gif" class="displayformula" width="25" height="14" border="0" alt="pi(x)"></td><td align="center" width="14"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline48.gif" class="displayformula" width="9" height="14" border="0" alt="="></td><td align="left"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline49.gif" class="displayformula" width="205" height="32" border="0" alt="Li(x)+O[xe^(-0.009(lnx)^(3/5)/(lnlnx)^(1/5))]."></td><td align="right" width="10">
+<div id="eqn24" class="eqnum">
+(24)
+</div>
+</td></tr>
+</tbody></table>
+<!-- End Content -->
+<div id="related">
+<!-- Begin See Also -->
+<span>SEE ALSO:</span> <a href="http://mathworld.wolfram.com/BertrandsPostulate.html">Bertrand's Postulate</a>, <a href="http://mathworld.wolfram.com/ChebyshevFunctions.html">Chebyshev Functions</a>, <a href="http://mathworld.wolfram.com/ChebyshevsTheorem.html">Chebyshev's
+ Theorem</a>, <a href="http://mathworld.wolfram.com/DirichletsTheorem.html">Dirichlet's Theorem</a>, <a href="http://mathworld.wolfram.com/GramSeries.html">Gram
+ Series</a>, <a href="http://mathworld.wolfram.com/PrimeCountingFunction.html">Prime Counting Function</a>, <a href="http://mathworld.wolfram.com/RiemannFunction.html">Riemann Function</a>, <a href="http://mathworld.wolfram.com/SelbergsFormula.html">Selberg's
+ Formula</a>, <a href="http://mathworld.wolfram.com/SkewesNumber.html">Skewes Number</a>
+<!-- End See Also -->
+<!-- Begin CrossURL -->
+<!-- End CrossURL -->
+<!-- Begin Contributor -->
+<!-- End Contributor -->
+<!-- Begin References -->
+<div class="line">
+<!-- -->
+</div>
+<span>REFERENCES:</span>
+<p class="small">
+Apostol, T.&nbsp;M. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0387901639/ref=nosim/ericstreasuretro">Introduction
+to Analytic Number Theory.</a></i> New York: Springer-Verlag, 1976.
+</p>
+<p class="small">
+Ball, W.&nbsp;W.&nbsp;R. and Coxeter, H.&nbsp;S.&nbsp;M. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0486253570/ref=nosim/ericstreasuretro">Mathematical
+Recreations and Essays, 13th ed.</a></i> New York: Dover, pp.&nbsp;62-64, 1987.
+</p>
+<p class="small">
+Berndt, B.&nbsp;C. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0387941096/ref=nosim/ericstreasuretro">Ramanujan's
+Notebooks, Part IV.</a></i> New York: Springer-Verlag, 1994.
+</p>
+<p class="small">
+Bochner. <i>Math. Z.</i> <b>37</b>, 1-9, 1933.
+</p>
+<p class="small">
+Borwein, J. and Bailey, D. <i><a href="http://www.amazon.com/exec/obidos/ASIN/1568812116/ref=nosim/ericstreasuretro">Mathematics by Experiment: Plausible Reasoning in the 21st Century.</a></i> Wellesley, MA: A
+ K Peters, p.&nbsp;64, 2003.
+</p>
+<p class="small">
+Courant, R. and Robbins, H. "The Prime Number Theorem." §1.2c in Supplement to Ch.&nbsp;1 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0195105192/ref=nosim/ericstreasuretro">What
+ Is Mathematics?: An Elementary Approach to Ideas and Methods, 2nd ed.</a></i> Oxford,
+ England: Oxford University Press, pp.&nbsp;27-30, 1996.
+</p>
+<p class="small">
+Crandall, R. and Pomerance, C. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0387252827/ref=nosim/ericstreasuretro">Prime Numbers: A Computational Perspective, 2nd ed.</a></i> New York: Springer-Verlag,
+ 2005.
+</p>
+<p class="small">
+Davenport, H. "Prime Number Theorem." Ch.&nbsp;18 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0387905332/ref=nosim/ericstreasuretro">Multiplicative
+Number Theory, 2nd ed.</a></i> New York: Springer-Verlag, pp.&nbsp;111-114, 1980.
+</p>
+<p class="small">
+de la Vallée Poussin, C.-J. "Recherches analytiques la théorie des nombres premiers." <i>Ann. Soc. scient. Bruxelles</i> <b>20</b>, 183-256,
+ 1896.
+</p>
+<p class="small">
+Vallée Poussin, C. <i>Mém. Couronnés Acad. Roy. Belgique</i> <b>59</b>,
+1-74, 1899.
+</p>
+<p class="small">
+Derbyshire, J. "The Prime Number Theorem." Ch.&nbsp;3 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0452285259/ref=nosim/ericstreasuretro">Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics.</a></i>
+ New York: Penguin, pp.&nbsp;32-47, 2004.
+</p>
+<p class="small">
+Edwards, H.&nbsp;M. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0486417409/ref=nosim/ericstreasuretro">Riemann's
+Zeta Function.</a></i> New York: Dover, 2001.
+</p>
+<p class="small">
+Erdős, P. "Démonstration élémentaire du théorème sur la distribution des nombres premiers." Scriptum 1, Centre Mathématique, Amsterdam, 1949.
+</p>
+<p class="small">
+Gauss, C.&nbsp;F. <i><a href="http://www.amazon.de/exec/obidos/ASIN/3487046326/ref=nosim/mathworld02-21">Werke,
+Band 10, Teil I.</a></i> p.&nbsp;10, 1863.
+</p>
+<p class="small">
+Hadamard, J. "Sur la distribution des zéros de la fonction <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline50.gif" class="inlineformula" width="23" height="14" border="0" alt="zeta(s)"> et ses conséquences
+ arithmétiques (')." <i>Bull. Soc. math. France</i> <b>24</b>, 199-220,
+ 1896.
+</p>
+<p class="small">
+Hardy, G.&nbsp;H. "The Proof of the Prime Number Theorem" and "Second Approximation of the Proof." §2.5 and 2.6 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0821820230/ref=nosim/ericstreasuretro">Ramanujan:
+ Twelve Lectures on Subjects Suggested by His Life and Work, 3rd ed.</a></i> New York:
+ Chelsea, pp.&nbsp;16, 27, and 28-33, 1999.
+</p>
+<p class="small">
+Hardy, G.&nbsp;H. and Wright, E.&nbsp;M. "Statement of the Prime Number Theorem." §1.8 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0198531710/ref=nosim/ericstreasuretro">An
+ Introduction to the Theory of Numbers, 5th ed.</a></i> Oxford, England: Clarendon
+ Press, pp.&nbsp;9-10, 1979.
+</p>
+<p class="small">
+Havil, J. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0691099839/ref=nosim/ericstreasuretro">Gamma:
+Exploring Euler's Constant.</a></i> Princeton, NJ: Princeton University Press, 2003.
+</p>
+<p class="small">
+Hoffman, P. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0786863625/ref=nosim/ericstreasuretro">The Man Who Loved Only Numbers: The Story of Paul Erdős and the Search for Mathematical
+ Truth.</a></i> New York: Hyperion, 1998.
+</p>
+<p class="small">
+Ingham, A.&nbsp;E. "Note on Riemann's <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline51.gif" class="inlineformula" width="7" height="14" border="0" alt="zeta">-Function and
+ Dirichlet's <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline52.gif" class="inlineformula" width="8" height="14" border="0" alt="L">-Functions." <i>J. London Math. Soc.</i> <b>5</b>,
+ 107-112, 1930.
+</p>
+<p class="small">
+Ingham, A.&nbsp;E. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0521397898/ref=nosim/ericstreasuretro">The Distribution of Prime Numbers.</a></i> London: Cambridge University Press, p.&nbsp;83,
+ 1990.
+</p>
+<p class="small">
+Knuth, D.&nbsp;E. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0201896842/ref=nosim/ericstreasuretro">The Art of Computer Programming, Vol.&nbsp;2: Seminumerical Algorithms, 3rd ed.</a></i>
+ Reading, MA: Addison-Wesley, 1998.
+</p>
+<p class="small">
+Landau, E. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0828400261/ref=nosim/ericstreasuretro">Elementare Zahlentheorie.</a></i> Leipzig, Germany: Hirzel, 1927. Reprinted Providence, RI:
+ Amer. Math. Soc., 1990.
+</p>
+<p class="small">
+Landau, E. <i>Berliner Sitzungsber.</i>, 514-521, 1932.
+</p>
+<p class="small">
+Landau, E. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0828400326/ref=nosim/ericstreasuretro">Vorlesungen über Zahlentheorie, Vol.&nbsp;1.</a></i> New York: Chelsea, pp.&nbsp;79-96,
+ 1970.
+</p>
+<p class="small">
+Landau, E. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0828400962/ref=nosim/ericstreasuretro">Handbuch
+der Lehre von der Verteilung der Primzahlen, 3rd ed.</a></i> New York: Chelsea, 1974.
+</p>
+<p class="small">
+Legendre, A.&nbsp;M. <i>Essai sur la Théorie des Nombres.</i> Paris: Duprat,
+1808.
+</p>
+<p class="small">
+Lehman, R.&nbsp;S. "On the Difference <img src="./Prime Number Theorem -- from Wolfram MathWorld_files/Inline53.gif" class="inlineformula" width="70" height="14" border="0" alt="pi(x)-Li(x)">."
+ <i>Acta Arith.</i> <b>11</b>, 397-410, 1966.
+</p>
+<p class="small">
+Littlewood, J.&nbsp;E. "Sur les distribution des nombres premiers." <i>Comptes
+Rendus Acad. Sci. Paris</i> <b>158</b>, 1869-1872, 1914.
+</p>
+<p class="small">
+Lu, W.&nbsp;C. "On the Elementary Proof of the Prime Number Theorem with a Remainder
+Term." <i>Rocky Mountain J. Math.</i> <b>29</b>, 979, 1999.
+</p>
+<p class="small">
+Nagell, T. "The Prime Number Theorem." Ch.&nbsp;8 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0828401632/ref=nosim/ericstreasuretro">Introduction
+to Number Theory.</a></i> New York: Wiley, pp.&nbsp;275-299, 1951.
+</p>
+<p class="small">
+Riemann, G.&nbsp;F.&nbsp;B. "Über die Anzahl der Primzahlen unter einer gegebenen Grösse." <i>Monatsber. Königl. Preuss. Akad. Wiss. Berlin</i>,
+ 671-680, Nov.&nbsp;1859.
+</p>
+<p class="small">
+Reprinted in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0828401349/ref=nosim/ericstreasuretro">Das
+Kontinuum und Andere Monographen</a></i> (Ed. H.&nbsp;Weyl). New York: Chelsea, 1972.
+</p>
+<p class="small">
+Riesel, H. "The Remainder Term in the Prime Number Theorem." <i><a href="http://www.amazon.com/exec/obidos/ASIN/0817637435/ref=nosim/ericstreasuretro">Prime Numbers and Computer Methods for Factorization, 2nd ed.</a></i> Boston, MA: Birkhäuser,
+ p.&nbsp;6, 1994.
+</p>
+<p class="small">
+Rubinstein, M. and Sarnak, P. "Chebyshev's Bias." <i>Experimental Math.</i> <b>3</b>,
+173-197, 1994.
+</p>
+<p class="small">
+Selberg, A. "An Elementary Proof of the Prime Number Theorem." <i>Ann.
+Math.</i> <b>50</b>, 305-313, 1949.
+</p>
+<p class="small">
+Shanks, D. "The Prime Number Theorem." §1.6 in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0828412979/ref=nosim/ericstreasuretro">Solved and Unsolved Problems in Number Theory, 4th ed.</a></i> New York: Chelsea, pp.&nbsp;15-17,
+ 1993.
+</p>
+<p class="small">
+Smith, D.&nbsp;E. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0486646904/ref=nosim/ericstreasuretro">A
+Source Book in Mathematics.</a></i> New York: Dover, 1994.
+</p>
+<p class="small">
+Wagon, S. <i><a href="http://www.amazon.com/exec/obidos/ASIN/0387753664/ref=nosim/ericstreasuretro">Mathematica
+in Action.</a></i> New York: W.&nbsp;H. Freeman, pp.&nbsp;25-35, 1991.
+</p>
+<p class="small">
+Walfisz, A. Ch.&nbsp;5 in <i>Weyl'sche Exponentialsummen in der neueren Zahlentheorie.</i>
+Berlin: Deutscher Verlag der Wissenschaften, 1963.
+</p>
+<p class="small">
+Wiener, N. §19 et seq. in <i><a href="http://www.amazon.com/exec/obidos/ASIN/0486602729/ref=nosim/ericstreasuretro">The
+Fourier Integral and Certain of Its Applications.</a></i> New York: Dover, 1951.
+</p>
+<!-- End References -->
+<!-- Begin CiteAs -->
+<div class="line">
+<!-- -->
+</div>
+<span>CITE THIS AS:</span>
+<p class="small">
+<a href="http://mathworld.wolfram.com/about/author.html">Weisstein, Eric W.</a> "Prime Number Theorem."
+From <a href="http://mathworld.wolfram.com/"><i>MathWorld</i></a>--A Wolfram Web Resource. <a href="http://mathworld.wolfram.com/PrimeNumberTheorem.html">http://mathworld.wolfram.com/PrimeNumberTheorem.html</a>
+</p>
+<!-- End CiteAs -->
+</div>
+<!-- End Total Content -->
+<!-- End Body -->
+</div>
+<!--End main content -->
+				
+<!--Start resources content -->
+
+				<div id="resourcesContent">
+					<h1>Wolfram Web Resources</h1>
+					<table summary="" width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tbody><tr>
+							<td>
+								<span class="title"><a href="http://www.wolfram.com/mathematica/" target="_blank">Mathematica&nbsp;»</a></span>
+								<p>The #1 tool for creating Demonstrations and anything technical.</p>
+							</td>
+							<td>
+								<span class="title"><a href="http://www.wolframalpha.com/" target="_blank">Wolfram|Alpha&nbsp;»</a></span>
+								<p>Explore anything with the first computational knowledge engine.</p>
+							</td>
+							<td class="last">
+								<span class="title"><a href="http://demonstrations.wolfram.com/" target="_blank">Wolfram Demonstrations Project&nbsp;»</a></span>
+								<p>Explore thousands of free applications across science, mathematics, engineering, technology, business, art, finance, social sciences, and more.</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="last">
+								<span class="title"><a href="http://www.computerbasedmath.org/" target="_blank">Computerbasedmath.org&nbsp;»</a></span>
+								<p>Join the initiative for modernizing math education.</p>
+							</td>
+							<td>
+								<span class="title"><a href="http://www.wolframalpha.com/calculators/integral-calculator/" target="_blank">Online Integral Calculator&nbsp;»</a></span>
+								<p>Solve integrals with Wolfram|Alpha.</p>
+							</td>
+							<td class="last">
+								<span class="title"><a href="https://www.wolframalpha.com/pro/step-by-step-math-solver.html" target="_blank">Step-by-step Solutions&nbsp;»</a></span>
+								<p>Walk through homework problems step-by-step from beginning to end. Hints help you try the next step on your own.</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="title"><a href="http://www.wolframalpha.com/pro/problem-generator/" target="_blank">Wolfram Problem Generator&nbsp;»</a></span>
+								<p>Unlimited random practice problems and answers with built-in Step-by-step solutions. Practice online or make a printable study sheet.</p>
+							</td>
+							<td>
+								<span class="title"><a href="http://education.wolfram.com/index.html" target="_blank">Wolfram Education Portal&nbsp;»</a></span>
+								<p>Collection of teaching and learning tools built by Wolfram education experts: dynamic textbook, lesson plans, widgets, interactive Demonstrations, and more.</p>
+							</td>
+							<td class="last">
+								<span class="title"><a href="http://www.wolfram.com/language/" target="_blank">Wolfram Language&nbsp;»</a></span>
+								<p>Knowledge-based programming for everyone.</p>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>	
+<!--End resources content -->
+				
+<!--Start footer content -->
+				<div id="footer">
+					<table summary="" width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tbody><tr>	
+							<td><a href="http://mathworld.wolfram.com/contact/"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/contact-icon.gif" alt="" title="" border="0"> Contact the <em>MathWorld</em> Team</a></td>
+							<td class="copyright">© 1999-2018 <a href="http://www.wolfram.com/" target="_blank">Wolfram Research, Inc.</a> | <a href="http://mathworld.wolfram.com/about/terms.html">Terms of Use</a></td>
+						</tr>
+					</tbody></table>
+				</div>
+
+<!--End footer content -->
+</td>
+<td>
+<div id="sidebar">
+						
+<div class="wawidgetWrapper">
+       
+<div class="wawidget">
+       <a href="http://www.wolframalpha.com/" class="walogolink" target="_blank" title="Wolfram|Alpha"></a>
+       <form target="_blank" action="http://www.wolframalpha.com/input/" name="wolframalpha">
+       <input type="text" value="" name="i" id="i">
+       <input type="image" src="./Prime Number Theorem -- from Wolfram MathWorld_files/WA-equals.gif" id="calculate">
+       </form>
+       
+<div class="clear">
+</div>
+       
+<div id="try">
+       <span>THINGS TO TRY:</span>
+       
+<div>
+<a target="_blank" href="http://www.wolframalpha.com/entities/famous_math_problems/prime_number_theorem/8t/uc/dz/"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/WA-try-equals.gif" alt="" title="">prime number theorem</a>
+</div>
+       
+<div><a target="_blank" href="http://www.wolframalpha.com/input/?i=5%5E5%5E5"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/WA-try-equals.gif" alt="" title="">5^5^5</a></div>
+
+<div><a target="_blank" href="http://www.wolframalpha.com/input/?i=factoradic+form+of+the+permutation+%283+1+2+5+4%29"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/WA-try-equals.gif" alt="" title="">factoradic form of the permutation (3 1 2 5 4)</a></div>
+
+       
+</div>
+       
+</div>
+       
+</div>
+<div class="demoWrapper">
+<a href="http://demonstrations.wolfram.com/" target="_blank" title="Wolfram Demonstrations Project"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/demo-title.gif" alt="Wolfram Demonstrations Project" title="Wolfram Demonstrations Project"></a>
+<table summary="" border="0" width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr><td><a href="http://demonstrations.wolfram.com/ThePrimeNumberTheorem/" target="_blank" title="The Prime Number Theorem"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/ThePrimeNumberTheorem.jpg" title="The Prime Number Theorem" alt="The Prime Number Theorem"></a></td><td><span><a href="http://demonstrations.wolfram.com/ThePrimeNumberTheorem/" target="_blank" title="The Prime Number Theorem">The
+ Prime Number Theorem</a></span>
+<div>
+Stephen Wolfram
+</div>
+</td></tr><tr><td><a href="http://demonstrations.wolfram.com/AnApproximationToTheNThPrimeNumber/" target="_blank" title="An Approximation to the n-th Prime Number"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/AnApproximationToTheNThPrimeNumber.jpg" title="An Approximation to the n-th Prime Number" alt="An Approximation to the n-th Prime Number"></a></td><td><span><a href="http://demonstrations.wolfram.com/AnApproximationToTheNThPrimeNumber/" target="_blank" title="An Approximation to the n-th Prime Number">An Approximation to the n-th Prime
+ Number</a></span>
+<div>
+Jon Perry
+</div>
+</td></tr><tr><td><a href="http://demonstrations.wolfram.com/DistributionOfPrimes/" target="_blank" title="Distribution of Primes"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/DistributionOfPrimes.jpg" title="Distribution of Primes" alt="Distribution of Primes"></a></td><td><span><a href="http://demonstrations.wolfram.com/DistributionOfPrimes/" target="_blank" title="Distribution of Primes">Distribution
+ of Primes</a></span>
+<div>
+Hector Zenil
+</div>
+</td></tr><tr><td><a href="http://demonstrations.wolfram.com/ApproximationsToTheDistributionOfPrimes/" target="_blank" title="Approximations to the Distribution of Primes"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/ApproximationsToTheDistributionOfPrimes.jpg" title="Approximations to the Distribution of Primes" alt="Approximations to the Distribution of Primes"></a></td><td><span><a href="http://demonstrations.wolfram.com/ApproximationsToTheDistributionOfPrimes/" target="_blank" title="Approximations to the Distribution of Primes">Approximations
+ to the Distribution of Primes</a></span>
+<div>
+Enrique Zeleny
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<div class="alphaWrapper">
+<a href="http://www.wolframalpha.com/pro/step-by-step-math-solver.html?source=mw-sidebar" target="_blank"><img src="./Prime Number Theorem -- from Wolfram MathWorld_files/step-by-step-3-3.png" alt="Step-by-step Solutions -- Arithmetic, Integration, Limits, Derivatives, Equation Solving, Expression Expansion, Matrix Row Reduction, Partial Fractions. Sign up now." title="Step-by-step Solutions -- Arithmetic, Integration, Limits, Derivatives, Equation Solving, Expression Expansion, Matrix Row Reduction, Partial Fractions. Sign up now."></a>
+</div>
+
+</div>
+</td>
+</tr>
+</tbody></table>
+
+
+</body></html>
